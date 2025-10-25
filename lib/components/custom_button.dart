@@ -26,12 +26,11 @@ class CustomButton extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.circular(50.r),
+        borderRadius: BorderRadius.circular(20.r),
       ),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          borderRadius: BorderRadius.circular(50.r),
           onTap: onPressed,
           child: Center(
             child: Text(

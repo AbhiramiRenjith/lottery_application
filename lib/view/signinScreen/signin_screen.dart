@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottery_project/view/signinScreen/forget_password_screen.dart';
-import 'package:lottery_project/view/signinScreen/components/bg_container_widget.dart';
-import 'package:lottery_project/view/signinScreen/components/custom_button.dart';
-import 'package:lottery_project/view/signinScreen/components/custom_textfield.dart';
+import 'package:lottery_project/view/signinScreen/widget/bg_container_widget.dart';
+import 'package:lottery_project/components/custom_button.dart';
+import 'package:lottery_project/components/custom_textfield.dart';
+import 'package:lottery_project/view/signinScreen/widget/donthaveaccount_text_widget.dart';
 
 
 class SigninScreen extends StatelessWidget {
@@ -22,7 +23,6 @@ class SigninScreen extends StatelessWidget {
             SizedBox(height: 30.h),
            CustomTextField(labelText: 'Password', obscureText: true),
             SizedBox(height: 20.h),
-  
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -66,7 +66,7 @@ class SigninScreen extends StatelessWidget {
               ],
             ),
 
-            SizedBox(height: 20.h),
+            SizedBox(height: 35.h),
 
 
            CustomButton(text: 'SIGN IN', onPressed: (){
@@ -74,47 +74,9 @@ class SigninScreen extends StatelessWidget {
             
 
            }),
-           SizedBox(height: 15.h),
-           Row(
-             mainAxisAlignment: MainAxisAlignment.center, 
-             children: [
-               Container(
-                 width: 50.w,
-                  height: 1, color:
-                   Colors.grey.shade300, 
-                   ), 
-                   SizedBox(width: 8.w),
-                    Text( ' Or sign up with',
-                     style: GoogleFonts.poppins( color: Color(0xFF676767), 
-                     fontWeight: FontWeight.w500, fontSize: 12.sp, ), ), 
-                     SizedBox(width: 8.w), 
-                     Container( 
-                      width: 50.w, 
-                      height: 1,
-                       color:
-                        Colors.grey.shade300, ), ], ),
-            SizedBox(height: 5.h),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  "Don't have an account?",
-                  style: GoogleFonts.poppins(fontSize: 12.sp),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Sign Up',
-                    style: GoogleFonts.poppins(
-                      color: const Color(0xFF81A6EE),
-                      fontWeight: FontWeight.w600,
-                      fontSize: 12.sp,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+           SizedBox(height: 10.h),
+           DonthaveaccountTextWidget(),
+          
           ],
         ),
       ),

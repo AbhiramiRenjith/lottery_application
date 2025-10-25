@@ -7,6 +7,8 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController? controller;
   final TextInputType keyboardType;
   final bool obscureText;
+   final Widget? suffixIcon;
+
 
   const CustomTextField({
     super.key,
@@ -14,6 +16,8 @@ class CustomTextField extends StatelessWidget {
     this.controller,
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
+    this.suffixIcon, 
+    
   });
 
   @override
@@ -22,14 +26,16 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       keyboardType: keyboardType,
       obscureText: obscureText,
+      
       style: GoogleFonts.poppins(
         color: const Color(0xFF888888),
-        fontSize: 15.sp,
+        fontSize: 14.sp,
+        fontWeight: FontWeight.w400
       ),
       decoration: InputDecoration(
         labelText: labelText,
         labelStyle: GoogleFonts.poppins(
-          fontSize: 22.sp,
+          fontSize: 16.sp,
           color: Colors.black,
           fontWeight: FontWeight.w400,
         ),
@@ -37,7 +43,11 @@ class CustomTextField extends StatelessWidget {
         focusedBorder: const UnderlineInputBorder(
           borderSide: BorderSide(color: Color(0xFFC1C1C1)),
         ),
+        suffixIcon: suffixIcon, 
+      
       ),
+      
+      
     );
   }
 }
