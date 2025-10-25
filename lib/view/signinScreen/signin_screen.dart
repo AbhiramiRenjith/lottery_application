@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottery_project/view/signinScreen/forget_password_screen.dart';
-import 'package:lottery_project/view/signinScreen/widget/bg_container_widget.dart';
-import 'package:lottery_project/view/signinScreen/widget/custom_button.dart';
+import 'package:lottery_project/view/signinScreen/components/bg_container_widget.dart';
+import 'package:lottery_project/view/signinScreen/components/custom_button.dart';
+import 'package:lottery_project/view/signinScreen/components/custom_textfield.dart';
 
 
 class SigninScreen extends StatelessWidget {
@@ -17,47 +18,11 @@ class SigninScreen extends StatelessWidget {
       child: Form(
         child: Column(
           children: [
-            TextFormField(
-              style: GoogleFonts.poppins(
-                color: const Color(0xFF888888),
-                fontSize: 15.sp,
-              ),
-              decoration: InputDecoration(
-                labelText: 'Phone Number',
-                labelStyle: GoogleFonts.poppins(
-                  fontSize: 22.sp,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400,
-                ),
-                floatingLabelBehavior: FloatingLabelBehavior.always,
-                focusedBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(color: Color(0XFFC1C1C1)),
-                ),
-              ),
-            ),
+         CustomTextField(labelText: 'Phone Number'),
             SizedBox(height: 30.h),
-            TextFormField(
-              style: GoogleFonts.poppins(
-                color: const Color(0xFF888888),
-                fontSize: 15.sp,
-              ),
-              decoration: InputDecoration(
-                labelText: 'Password',
-                labelStyle: GoogleFonts.poppins(
-                  fontSize: 22.sp,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w400,
-                ),
-                floatingLabelBehavior: FloatingLabelBehavior.always,
-                focusedBorder: const UnderlineInputBorder(
-                  borderSide: BorderSide(color: Color(0XFFC1C1C1)),
-                ),
-              ),
-              obscureText: true,
-            ),
+           CustomTextField(labelText: 'Password', obscureText: true),
             SizedBox(height: 20.h),
-
-           
+  
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -106,10 +71,29 @@ class SigninScreen extends StatelessWidget {
 
            CustomButton(text: 'SIGN IN', onPressed: (){
 
-           }),
-      
+            
 
-            SizedBox(height: 25.h),
+           }),
+           SizedBox(height: 15.h),
+           Row(
+             mainAxisAlignment: MainAxisAlignment.center, 
+             children: [
+               Container(
+                 width: 50.w,
+                  height: 1, color:
+                   Colors.grey.shade300, 
+                   ), 
+                   SizedBox(width: 8.w),
+                    Text( ' Or sign up with',
+                     style: GoogleFonts.poppins( color: Color(0xFF676767), 
+                     fontWeight: FontWeight.w500, fontSize: 12.sp, ), ), 
+                     SizedBox(width: 8.w), 
+                     Container( 
+                      width: 50.w, 
+                      height: 1,
+                       color:
+                        Colors.grey.shade300, ), ], ),
+            SizedBox(height: 5.h),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
