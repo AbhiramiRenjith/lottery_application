@@ -33,7 +33,11 @@ class WelcomeScreen extends StatelessWidget {
               ),
               SizedBox(height: 100.h),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                   Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return SigninScreen();
+                  }));
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.transparent,
                   shadowColor: Colors.transparent,
@@ -55,9 +59,7 @@ class WelcomeScreen extends StatelessWidget {
               SizedBox(height: 35.h),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return SigninScreen();
-                  }));
+                 
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,

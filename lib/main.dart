@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottery_project/view/signinScreen/welcome_screen.dart';
-import 'package:lottery_project/view/signinScreen/forget_password_screen.dart';
-
-
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
