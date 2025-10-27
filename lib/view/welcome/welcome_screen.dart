@@ -34,9 +34,7 @@ class WelcomeScreen extends StatelessWidget {
               SizedBox(height: 100.h),
               ElevatedButton(
                 onPressed: () {
-                   Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return SigninScreen();
-                  }));
+                   Navigator.pushNamed(context, '/signin');
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.transparent,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottery_project/view/signinScreen/widget/bg_container_widget.dart';
+import 'package:lottery_project/view/welcome/widget/bg_container_widget.dart';
 import 'package:lottery_project/components/custom_button.dart';
-import 'package:lottery_project/view/signinScreen/widget/donthaveaccount_text_widget.dart';
+import 'package:lottery_project/view/welcome/widget/donthaveaccount_text_widget.dart';
 
 class VerifyAccountScreen extends StatelessWidget {
   const VerifyAccountScreen({super.key});
@@ -78,6 +78,7 @@ class VerifyAccountScreen extends StatelessWidget {
           CustomButton(
             text: "VERIFY",
             onPressed: () {
+             Navigator.pushNamed(context, '/create_new_pass');
         
             },
           ),

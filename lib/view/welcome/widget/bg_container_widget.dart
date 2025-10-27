@@ -39,7 +39,7 @@ class BackgroundContainerWidget extends StatelessWidget {
                             fontWeight: FontWeight.w600,
                             fontSize: 30.sp,
                             color: Colors.white,
-                            height: 2,
+                            height: 1.5,
                           ),
                         ),
                       ),

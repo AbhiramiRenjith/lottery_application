@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottery_project/components/custom_button.dart';
 import 'package:lottery_project/components/custom_textfield.dart';
-import 'package:lottery_project/view/signinScreen/widget/bg_container_widget.dart';
+import 'package:lottery_project/view/welcome/widget/bg_container_widget.dart';
 
 
 class CreateNewPasswordScreen extends StatefulWidget {
@@ -43,7 +43,7 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
             ),
             SizedBox(height: 50.h),
             CustomTextField(
-              labelText: "Conform Password",
+              labelText: "Confirm Password",
               obscureText: _obscurePassword,
               suffixIcon: GestureDetector(
                 onTap: () {
@@ -60,6 +60,8 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
             ),
             SizedBox(height: 100),
             CustomButton(text: "RESET PASSWORD", onPressed: (){
+              Navigator.pushNamed(context, '/verify_success');
+
 
             })
           ],

@@ -2,11 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottery_project/view/signinScreen/forget_password_screen.dart';
-import 'package:lottery_project/view/signinScreen/widget/bg_container_widget.dart';
+import 'package:lottery_project/view/forgetPassword/forget_password_screen.dart';
+import 'package:lottery_project/view/welcome/widget/bg_container_widget.dart';
 import 'package:lottery_project/components/custom_button.dart';
 import 'package:lottery_project/components/custom_textfield.dart';
-import 'package:lottery_project/view/signinScreen/widget/donthaveaccount_text_widget.dart';
+import 'package:lottery_project/view/welcome/widget/donthaveaccount_text_widget.dart';
 
 
 class SigninScreen extends StatelessWidget {
@@ -49,10 +49,7 @@ class SigninScreen extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (_) => const ForgetPassword()),
-                    );
+                   Navigator.pushNamed(context, '/forget_password');
                   },
                   child: Text(
                     'Forget password?',
