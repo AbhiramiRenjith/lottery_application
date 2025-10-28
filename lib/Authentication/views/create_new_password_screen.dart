@@ -6,10 +6,8 @@ import 'package:lottery_project/common_widgets/bg_container_widget.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
 
-
 class CreateNewPasswordScreen extends StatefulWidget {
   const CreateNewPasswordScreen({super.key});
-
   @override
   State<CreateNewPasswordScreen> createState() =>
       _CreateNewPasswordScreenState();
@@ -36,10 +34,11 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                   });
                 },
                 child: Icon(
-                  _obscureNewPassword ?
-                     Icons.visibility_off_outlined : Icons.visibility_outlined,
+                  _obscureNewPassword
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
                   color: ColorConstants.blackColor,
-                  size: 16, 
+                  size: 16,
                 ),
               ),
             ),
@@ -54,18 +53,21 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                   });
                 },
                 child: Icon(
-                  _obscurePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,
+                  _obscurePassword
+                      ? Icons.visibility_off_outlined
+                      : Icons.visibility_outlined,
                   color: ColorConstants.blackColor,
-                   size: 16, 
+                  size: 16,
                 ),
               ),
             ),
             SizedBox(height: 100),
-            CustomButton(text: TextConstants.resetpass, onPressed: (){
-              Navigator.pushNamed(context, '/verify_success');
-
-
-            })
+            CustomButton(
+              text: TextConstants.resetpass,
+              onPressed: () {
+                Navigator.pushNamed(context, '/verify_success');
+              },
+            ),
           ],
         ),
       ),

@@ -5,6 +5,7 @@ import 'package:lottery_project/Authentication/widgets/custom_button.dart';
 import 'package:lottery_project/Authentication/widgets/custom_textfield.dart';
 import 'package:lottery_project/common_widgets/bg_container_widget.dart';
 import 'package:lottery_project/constants/color_constants.dart';
+import 'package:lottery_project/constants/appfontsize_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
 
 class CreateAccountScreen extends StatelessWidget {
@@ -23,15 +24,21 @@ class CreateAccountScreen extends StatelessWidget {
               CustomTextField(labelText: TextConstants.location),
               SizedBox(height: 10.h),
               CustomTextField(
-                labelText:TextConstants.phoneNumber ,
+                labelText: TextConstants.phoneNumber,
                 keyboardType: TextInputType.phone,
               ),
               SizedBox(height: 10.h),
-              CustomTextField(labelText:TextConstants.password , obscureText: true),
+              CustomTextField(
+                labelText: TextConstants.password,
+                obscureText: true,
+              ),
               SizedBox(height: 10.h),
-              CustomTextField(labelText:TextConstants.confirmPass , obscureText: true),
+              CustomTextField(
+                labelText: TextConstants.confirmPass,
+                obscureText: true,
+              ),
               SizedBox(height: 20.h),
-              CustomButton(text:TextConstants.signUp , onPressed: () {}),
+              CustomButton(text: TextConstants.signUp, onPressed: () {}),
               SizedBox(height: 10.h),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -43,7 +50,7 @@ class CreateAccountScreen extends StatelessWidget {
                       gradient: LinearGradient(
                         colors: [
                           ColorConstants.gradientDarkGrey,
-                          ColorConstants.gradientLigntgrey
+                          ColorConstants.gradientLigntgrey,
                         ],
                         end: AlignmentGeometry.topLeft,
                         begin: Alignment.topRight,
@@ -57,7 +64,7 @@ class CreateAccountScreen extends StatelessWidget {
                     style: GoogleFonts.poppins(
                       color: ColorConstants.greyColor,
                       fontWeight: FontWeight.w500,
-                      fontSize: 15,
+                      fontSize: AppFontSizeContants.smallText,
                     ),
                   ),
                   SizedBox(width: 20.w),
@@ -67,8 +74,8 @@ class CreateAccountScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                           ColorConstants.gradientDarkGrey,
-                          ColorConstants.gradientLigntgrey
+                          ColorConstants.gradientDarkGrey,
+                          ColorConstants.gradientLigntgrey,
                         ],
                         begin: AlignmentGeometry.topLeft,
                         end: Alignment.topRight,
@@ -85,9 +92,9 @@ class CreateAccountScreen extends StatelessWidget {
                   Text(
                     TextConstants.haveAccount,
                     style: GoogleFonts.poppins(
-                      fontSize: 15,
+                      fontSize: AppFontSizeContants.smallText,
                       fontWeight: FontWeight.w500,
-                      color: ColorConstants.greyColor
+                      color: ColorConstants.greyColor,
                     ),
                   ),
                   TextButton(
@@ -102,7 +109,7 @@ class CreateAccountScreen extends StatelessWidget {
                       style: GoogleFonts.poppins(
                         color: ColorConstants.textbuttonColor,
                         fontWeight: FontWeight.w600,
-                        fontSize: 15,
+                        fontSize: AppFontSizeContants.smallText,
                       ),
                     ),
                   ),

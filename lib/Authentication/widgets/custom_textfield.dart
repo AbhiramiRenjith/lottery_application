@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottery_project/constants/appfontsize_constants.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -7,8 +8,7 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController? controller;
   final TextInputType keyboardType;
   final bool obscureText;
-   final Widget? suffixIcon;
-
+  final Widget? suffixIcon;
 
   const CustomTextField({
     super.key,
@@ -16,8 +16,7 @@ class CustomTextField extends StatelessWidget {
     this.controller,
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
-    this.suffixIcon, 
-    
+    this.suffixIcon,
   });
 
   @override
@@ -26,31 +25,26 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       keyboardType: keyboardType,
       obscureText: obscureText,
-      
+
       style: GoogleFonts.poppins(
         color: ColorConstants.labelColor,
-        fontSize: 18,
-        fontWeight: FontWeight.w400
+        fontSize: AppFontSizeContants.medium,
+        fontWeight: FontWeight.w400,
       ),
       decoration: InputDecoration(
         labelText: labelText,
         labelStyle: GoogleFonts.poppins(
-          fontSize: 25,
+          fontSize: AppFontSizeContants.textFieldLabel,
           color: ColorConstants.blackColor,
           fontWeight: FontWeight.w400,
         ),
         floatingLabelBehavior: FloatingLabelBehavior.always,
 
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color:ColorConstants.borderColor ),
+          borderSide: BorderSide(color: ColorConstants.borderColor),
         ),
-        suffixIcon: suffixIcon, 
-      
+        suffixIcon: suffixIcon,
       ),
-      
-      
     );
   }
 }
-
-

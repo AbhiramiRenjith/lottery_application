@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottery_project/constants/appfontsize_constants.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/radius_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
@@ -28,24 +28,27 @@ class WelcomeScreen extends StatelessWidget {
 
         child: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.only(top: 321.h, left: 30.w, right: 30.w, bottom: 30.h),
+            padding: EdgeInsets.only(
+              top: 321.h,
+              left: 30.w,
+              right: 30.w,
+              bottom: 30.h,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-         
                 Text(
                   TextConstants.welcome,
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w600,
-                    fontSize: 35,
+                    fontSize: AppFontSizeContants.title,
                     color: ColorConstants.whiteColor,
                   ),
                 ),
 
                 SizedBox(height: 100.h),
 
-              
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/signin');
@@ -53,7 +56,10 @@ class WelcomeScreen extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: ColorConstants.transparent,
                     shadowColor: ColorConstants.transparent,
-                    side: BorderSide(color: ColorConstants.whiteColor, width: 1.w),
+                    side: BorderSide(
+                      color: ColorConstants.whiteColor,
+                      width: 1.w,
+                    ),
                     shape: RoundedRectangleBorder(
                       borderRadius: RadiusConstants.largeBtnRadius,
                     ),
@@ -63,7 +69,7 @@ class WelcomeScreen extends StatelessWidget {
                     TextConstants.signIn,
                     style: GoogleFonts.poppins(
                       color: ColorConstants.whiteColor,
-                      fontSize: 22,
+                      fontSize: AppFontSizeContants.buttonLabel,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -71,7 +77,6 @@ class WelcomeScreen extends StatelessWidget {
 
                 SizedBox(height: 35.h),
 
-              
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/create_account');
@@ -79,7 +84,10 @@ class WelcomeScreen extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: ColorConstants.whiteColor,
                     shadowColor: ColorConstants.transparent,
-                    side: BorderSide(color: ColorConstants.whiteColor, width: 1),
+                    side: BorderSide(
+                      color: ColorConstants.whiteColor,
+                      width: 1,
+                    ),
                     shape: RoundedRectangleBorder(
                       borderRadius: RadiusConstants.largeBtnRadius,
                     ),
@@ -89,7 +97,7 @@ class WelcomeScreen extends StatelessWidget {
                     TextConstants.signUp,
                     style: GoogleFonts.poppins(
                       color: ColorConstants.blackColor,
-                      fontSize: 22,
+                      fontSize: AppFontSizeContants.buttonLabel,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -97,15 +105,12 @@ class WelcomeScreen extends StatelessWidget {
 
                 SizedBox(height: 50.h),
 
-              
                 TextButton(
-                  onPressed: () {
-
-                  },
+                  onPressed: () {},
                   child: Text(
                     TextConstants.loginWithSocialMedia,
                     style: GoogleFonts.poppins(
-                      fontSize: 16,
+                      fontSize: AppFontSizeContants.smallText,
                       fontWeight: FontWeight.w500,
                       color: ColorConstants.whiteColor,
                     ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottery_project/constants/appfontsize_constants.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/radius_constants.dart';
 
@@ -8,11 +9,7 @@ class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
 
-  const CustomButton({
-    super.key,
-    required this.text,
-    required this.onPressed,
-  });
+  const CustomButton({super.key, required this.text, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +36,7 @@ class CustomButton extends StatelessWidget {
               text,
               style: GoogleFonts.poppins(
                 color: ColorConstants.whiteColor,
-                fontSize: 22,
+                fontSize: AppFontSizeContants.buttonLabel,
                 fontWeight: FontWeight.w600,
               ),
             ),

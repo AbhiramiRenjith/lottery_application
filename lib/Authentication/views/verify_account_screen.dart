@@ -1,11 +1,10 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottery_project/common_widgets/bg_container_widget.dart';
 import 'package:lottery_project/Authentication/widgets/custom_button.dart';
 import 'package:lottery_project/common_widgets/dont_have_account_text_widget.dart';
+import 'package:lottery_project/constants/appfontsize_constants.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
 
@@ -33,7 +32,7 @@ class VerifyAccountScreen extends StatelessWidget {
                   keyboardType: TextInputType.number,
                   maxLength: 1,
                   style: TextStyle(
-                    fontSize: 20.sp,
+                    fontSize: AppFontSizeContants.medium,
                     fontWeight: FontWeight.w600,
                   ),
                   decoration: InputDecoration(
@@ -41,7 +40,9 @@ class VerifyAccountScreen extends StatelessWidget {
                     contentPadding: EdgeInsets.zero,
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.zero,
-                      borderSide: const BorderSide(color: ColorConstants.otpBoxColr),
+                      borderSide: const BorderSide(
+                        color: ColorConstants.otpBoxColr,
+                      ),
                     ),
                     focusedBorder: const OutlineInputBorder(
                       borderRadius: BorderRadius.zero,
@@ -53,7 +54,6 @@ class VerifyAccountScreen extends StatelessWidget {
             }),
           ),
 
-      
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 25.w),
             child: Row(
@@ -63,7 +63,7 @@ class VerifyAccountScreen extends StatelessWidget {
                   TextConstants.resentOtp,
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w600,
-                    fontSize: 12,
+                    fontSize: AppFontSizeContants.smallText,
                     color: ColorConstants.redColor,
                   ),
                 ),
@@ -71,23 +71,20 @@ class VerifyAccountScreen extends StatelessWidget {
                   "1:25",
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w500,
-                    fontSize: 18,
+                    fontSize: AppFontSizeContants.medium,
                     color: ColorConstants.gradientDarkBlue,
                   ),
                 ),
               ],
             ),
           ),
-
           SizedBox(height: 45.h),
-
           CustomButton(
             text: TextConstants.verify,
             onPressed: () {
               Navigator.pushNamed(context, '/create_new_pass');
             },
           ),
-
           SizedBox(height: 15.h),
           DonthaveaccountTextWidget(),
         ],
