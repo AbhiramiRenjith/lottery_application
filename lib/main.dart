@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lottery_project/view/createAccount/create_account_screen.dart';
-import 'package:lottery_project/view/createNewPassword/create_new_password_screen.dart';
-import 'package:lottery_project/view/forgetPassword/forget_password_screen.dart';
-import 'package:lottery_project/view/signinScreen/signin_screen.dart';
-import 'package:lottery_project/view/verifyAccount/verify_account_screen.dart';
-import 'package:lottery_project/view/verifyAccount/verify_succsessfull_screen.dart';
-import 'package:lottery_project/view/welcome/welcome_screen.dart';
+import 'package:lottery_project/Authentication/views/create_account_screen.dart';
+import 'package:lottery_project/Authentication/views/create_new_password_screen.dart';
+import 'package:lottery_project/Authentication/views/forget_password_screen.dart';
+import 'package:lottery_project/Authentication/views/signin_screen.dart';
+import 'package:lottery_project/Authentication/views/verify_account_screen.dart';
+import 'package:lottery_project/Authentication/views/verify_succsessfull_screen.dart';
+import 'package:lottery_project/Authentication/views/welcome_screen.dart';
 
 
 void main() {
@@ -31,13 +31,10 @@ class MyApp extends StatelessWidget {
           '/verify_account':(context) => VerifyAccountScreen(),
           '/verify_success':(context) => VerifySuccsessfullScreen(),
           '/create_account':(context) => CreateAccountScreen(),
-          
-
          },
          initialRoute: '/',
         );
-      },
-      
+      },   
     );
   }
 }

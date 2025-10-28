@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottery_project/constants/color_constants.dart';
+import 'package:lottery_project/constants/text_constants.dart';
 
 class DonthaveaccountTextWidget extends StatelessWidget {
   const DonthaveaccountTextWidget({super.key});
@@ -18,8 +20,8 @@ class DonthaveaccountTextWidget extends StatelessWidget {
               
                    decoration: BoxDecoration(
                     gradient: LinearGradient(colors: [
-                     Color.fromRGBO(217, 217, 217, 1),
-                     Color.fromRGBO(217, 217, 217, 0),
+                     ColorConstants.gradientDarkGrey,
+                     ColorConstants.gradientLigntgrey,
                      
                     ],
                     end: AlignmentGeometry.topLeft,
@@ -30,17 +32,17 @@ class DonthaveaccountTextWidget extends StatelessWidget {
                    ), 
 
                    SizedBox(width: 8.w),
-                    Text( ' Or  ',
-                     style: GoogleFonts.poppins( color: Color(0xFF676767), 
-                     fontWeight: FontWeight.w500, fontSize: 12.sp, ), ), 
+                    Text( TextConstants.or,
+                     style: GoogleFonts.poppins( color:ColorConstants.greyColor , 
+                     fontWeight: FontWeight.w500, fontSize: 15) ), 
                      SizedBox(width: 8.w), 
                      Container( 
                       width: 98.w, 
                       height: 1,
                        decoration: BoxDecoration(
                     gradient: LinearGradient(colors: [
-                     Color.fromRGBO(217, 217, 217, 1),
-                     Color.fromRGBO(217, 217, 217, 0),
+                     ColorConstants.gradientDarkGrey,
+                     ColorConstants.gradientLigntgrey,
                      
                     ],
                     begin: AlignmentGeometry.topLeft,
@@ -56,9 +58,10 @@ class DonthaveaccountTextWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Don't have an account?",
-                  style: GoogleFonts.poppins(fontSize: 12.sp,fontWeight: FontWeight.w500,color: Color(0XFF817E7E)),
+                  TextConstants.donthaveAccount,
+                  style: GoogleFonts.poppins(fontSize: 15,fontWeight: FontWeight.w500,color: ColorConstants.greyColor),
                 ),
+                SizedBox(width: 5),
                 TextButton(
                     style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
@@ -67,11 +70,11 @@ class DonthaveaccountTextWidget extends StatelessWidget {
                   ),
                   onPressed: () {},
                   child: Text(
-                    'Sign Up',
+                    TextConstants.signUpTextButton,
                     style: GoogleFonts.poppins(
-                      color: const Color(0xFF81A6EE),
+                      color: ColorConstants.textbuttonColor,
                       fontWeight: FontWeight.w600,
-                      fontSize: 12.sp,
+                      fontSize: 15,
                     ),
                   ),
                 ),

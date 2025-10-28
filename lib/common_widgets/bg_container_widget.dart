@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottery_project/constants/color_constants.dart';
 
 class BackgroundContainerWidget extends StatelessWidget {
   final String title;
@@ -19,7 +20,7 @@ class BackgroundContainerWidget extends StatelessWidget {
         width: double.infinity,
         decoration: const BoxDecoration(
           gradient: LinearGradient(
-            colors: [Color(0xFF055C9D), Color(0xFF448AFF)],       
+            colors: [ColorConstants.gradientDarkBlue, ColorConstants.gradientLightBlue],       
           ),
         ),
         child: LayoutBuilder(
@@ -37,8 +38,8 @@ class BackgroundContainerWidget extends StatelessWidget {
                           title,
                           style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w600,
-                            fontSize: 30.sp,
-                            color: Colors.white,
+                            fontSize: 33,
+                            color: ColorConstants.whiteColor,
                             height: 1.5,
                           ),
                         ),
@@ -48,7 +49,7 @@ class BackgroundContainerWidget extends StatelessWidget {
                         child: Container(
                           width: double.infinity,
                           decoration: BoxDecoration(
-                            color: Colors.white,
+                            color: ColorConstants.whiteColor,
                             borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(45.r),
                               topRight: Radius.circular(45.r),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottery_project/constants/color_constants.dart';
 
 class CustomTextField extends StatelessWidget {
   final String labelText;
@@ -28,20 +28,21 @@ class CustomTextField extends StatelessWidget {
       obscureText: obscureText,
       
       style: GoogleFonts.poppins(
-        color: const Color(0xFF888888),
-        fontSize: 14.sp,
+        color: ColorConstants.labelColor,
+        fontSize: 18,
         fontWeight: FontWeight.w400
       ),
       decoration: InputDecoration(
         labelText: labelText,
         labelStyle: GoogleFonts.poppins(
-          fontSize: 16.sp,
-          color: Colors.black,
+          fontSize: 25,
+          color: ColorConstants.blackColor,
           fontWeight: FontWeight.w400,
         ),
         floatingLabelBehavior: FloatingLabelBehavior.always,
+
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: Color(0xFFC1C1C1)),
+          borderSide: BorderSide(color:ColorConstants.borderColor ),
         ),
         suffixIcon: suffixIcon, 
       
@@ -51,3 +52,5 @@ class CustomTextField extends StatelessWidget {
     );
   }
 }
+
+

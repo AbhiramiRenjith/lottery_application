@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lottery_project/components/custom_button.dart';
-import 'package:lottery_project/components/custom_textfield.dart';
-import 'package:lottery_project/view/welcome/widget/bg_container_widget.dart';
+import 'package:lottery_project/Authentication/widgets/custom_button.dart';
+import 'package:lottery_project/Authentication/widgets/custom_textfield.dart';
+import 'package:lottery_project/common_widgets/bg_container_widget.dart';
+import 'package:lottery_project/constants/color_constants.dart';
+import 'package:lottery_project/constants/text_constants.dart';
 
 
 class CreateNewPasswordScreen extends StatefulWidget {
@@ -20,12 +22,12 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return BackgroundContainerWidget(
-      title: 'Create new\n password',
+      title: TextConstants.createNewPass,
       child: Form(
         child: Column(
           children: [
             CustomTextField(
-              labelText: "New Password",
+              labelText: TextConstants.newPass,
               obscureText: _obscureNewPassword,
               suffixIcon: GestureDetector(
                 onTap: () {
@@ -36,14 +38,14 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                 child: Icon(
                   _obscureNewPassword ?
                      Icons.visibility_off_outlined : Icons.visibility_outlined,
-                  color: Colors.black,
-                  size: 16.sp, 
+                  color: ColorConstants.blackColor,
+                  size: 16, 
                 ),
               ),
             ),
             SizedBox(height: 50.h),
             CustomTextField(
-              labelText: "Confirm Password",
+              labelText: TextConstants.conformPass,
               obscureText: _obscurePassword,
               suffixIcon: GestureDetector(
                 onTap: () {
@@ -53,13 +55,13 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                 },
                 child: Icon(
                   _obscurePassword ? Icons.visibility_off_outlined : Icons.visibility_outlined,
-                  color: Colors.black,
-                   size: 16.sp, 
+                  color: ColorConstants.blackColor,
+                   size: 16, 
                 ),
               ),
             ),
             SizedBox(height: 100),
-            CustomButton(text: "RESET PASSWORD", onPressed: (){
+            CustomButton(text: TextConstants.resetpass, onPressed: (){
               Navigator.pushNamed(context, '/verify_success');
 
 
