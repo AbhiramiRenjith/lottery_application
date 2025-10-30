@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottery_project/constants/appfontsize_constants.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
 
@@ -27,7 +26,7 @@ class VerifySuccsessfullScreen extends StatelessWidget {
                   color: Color(0XFF448AFF)
                 ),),
                 Text(TextConstants.emailSuccessText,maxLines: 2,style: GoogleFonts.poppins(
-                  fontWeight: FontWeight.w400,color: ColorConstants.labelColor,fontSize: AppFontSizeContants.smallText
+                  fontWeight: FontWeight.w400,color: ColorConstants.labelColor,fontSize: 15
                 ),)
               ],
             ),

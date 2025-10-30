@@ -5,7 +5,6 @@ import 'package:lottery_project/Authentication/widgets/custom_button.dart';
 import 'package:lottery_project/Authentication/widgets/custom_textfield.dart';
 import 'package:lottery_project/common_widgets/bg_container_widget.dart';
 import 'package:lottery_project/constants/color_constants.dart';
-import 'package:lottery_project/constants/appfontsize_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
 
 class CreateAccountScreen extends StatelessWidget {
@@ -64,7 +63,7 @@ class CreateAccountScreen extends StatelessWidget {
                     style: GoogleFonts.poppins(
                       color: ColorConstants.greyColor,
                       fontWeight: FontWeight.w500,
-                      fontSize: AppFontSizeContants.smallText,
+                      fontSize: 15,
                     ),
                   ),
                   SizedBox(width: 20.w),
@@ -92,7 +91,7 @@ class CreateAccountScreen extends StatelessWidget {
                   Text(
                     TextConstants.haveAccount,
                     style: GoogleFonts.poppins(
-                      fontSize: AppFontSizeContants.smallText,
+                      fontSize: 15,
                       fontWeight: FontWeight.w500,
                       color: ColorConstants.greyColor,
                     ),
@@ -109,7 +108,7 @@ class CreateAccountScreen extends StatelessWidget {
                       style: GoogleFonts.poppins(
                         color: ColorConstants.textbuttonColor,
                         fontWeight: FontWeight.w600,
-                        fontSize: AppFontSizeContants.smallText,
+                        fontSize: 15,
                       ),
                     ),
                   ),

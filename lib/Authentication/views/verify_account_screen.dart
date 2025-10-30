@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottery_project/common_widgets/bg_container_widget.dart';
 import 'package:lottery_project/Authentication/widgets/custom_button.dart';
 import 'package:lottery_project/common_widgets/dont_have_account_text_widget.dart';
-import 'package:lottery_project/constants/appfontsize_constants.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
 
@@ -32,7 +31,7 @@ class VerifyAccountScreen extends StatelessWidget {
                   keyboardType: TextInputType.number,
                   maxLength: 1,
                   style: TextStyle(
-                    fontSize: AppFontSizeContants.medium,
+                    fontSize: 18,
                     fontWeight: FontWeight.w600,
                   ),
                   decoration: InputDecoration(
@@ -63,7 +62,7 @@ class VerifyAccountScreen extends StatelessWidget {
                   TextConstants.resentOtp,
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w600,
-                    fontSize: AppFontSizeContants.smallText,
+                    fontSize: 15,
                     color: ColorConstants.redColor,
                   ),
                 ),
@@ -71,7 +70,7 @@ class VerifyAccountScreen extends StatelessWidget {
                   "1:25",
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w500,
-                    fontSize: AppFontSizeContants.medium,
+                    fontSize: 18,
                     color: ColorConstants.gradientDarkBlue,
                   ),
                 ),

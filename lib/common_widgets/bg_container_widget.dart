@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottery_project/constants/appfontsize_constants.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 
 class BackgroundContainerWidget extends StatelessWidget {
@@ -42,7 +41,7 @@ class BackgroundContainerWidget extends StatelessWidget {
                           title,
                           style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w600,
-                            fontSize: AppFontSizeContants.title,
+                            fontSize: 35,
                             color: ColorConstants.whiteColor,
                             height: 1.5,
                           ),

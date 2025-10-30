@@ -7,6 +7,7 @@ import 'package:lottery_project/Authentication/views/signin_screen.dart';
 import 'package:lottery_project/Authentication/views/verify_account_screen.dart';
 import 'package:lottery_project/Authentication/views/verify_succsessfull_screen.dart';
 import 'package:lottery_project/Authentication/views/welcome_screen.dart';
+import 'package:lottery_project/BottomNavigationBar/bottom_navigation_bar.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,8 +31,9 @@ class MyApp extends StatelessWidget {
             '/verify_account': (context) => VerifyAccountScreen(),
             '/verify_success': (context) => VerifySuccsessfullScreen(),
             '/create_account': (context) => CreateAccountScreen(),
+            '/bottonNav':(context) => BottomNavigationBarScreen(),
           },
-          initialRoute: '/',
+          initialRoute: '/bottonNav',
         );
       },
     );

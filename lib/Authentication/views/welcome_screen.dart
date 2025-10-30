@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottery_project/constants/appfontsize_constants.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/radius_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
@@ -42,7 +41,7 @@ class WelcomeScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w600,
-                    fontSize: AppFontSizeContants.title,
+                    fontSize: 35,
                     color: ColorConstants.whiteColor,
                   ),
                 ),
@@ -69,7 +68,7 @@ class WelcomeScreen extends StatelessWidget {
                     TextConstants.signIn,
                     style: GoogleFonts.poppins(
                       color: ColorConstants.whiteColor,
-                      fontSize: AppFontSizeContants.buttonLabel,
+                      fontSize: 22,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -97,7 +96,7 @@ class WelcomeScreen extends StatelessWidget {
                     TextConstants.signUp,
                     style: GoogleFonts.poppins(
                       color: ColorConstants.blackColor,
-                      fontSize: AppFontSizeContants.buttonLabel,
+                      fontSize:22,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -110,7 +109,7 @@ class WelcomeScreen extends StatelessWidget {
                   child: Text(
                     TextConstants.loginWithSocialMedia,
                     style: GoogleFonts.poppins(
-                      fontSize: AppFontSizeContants.smallText,
+                      fontSize: 15,
                       fontWeight: FontWeight.w500,
                       color: ColorConstants.whiteColor,
                     ),

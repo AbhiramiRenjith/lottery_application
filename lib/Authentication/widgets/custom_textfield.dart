@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottery_project/constants/appfontsize_constants.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -28,13 +27,13 @@ class CustomTextField extends StatelessWidget {
 
       style: GoogleFonts.poppins(
         color: ColorConstants.labelColor,
-        fontSize: AppFontSizeContants.medium,
+        fontSize: 18,
         fontWeight: FontWeight.w400,
       ),
       decoration: InputDecoration(
         labelText: labelText,
         labelStyle: GoogleFonts.poppins(
-          fontSize: AppFontSizeContants.textFieldLabel,
+          fontSize: 25,
           color: ColorConstants.blackColor,
           fontWeight: FontWeight.w400,
         ),
