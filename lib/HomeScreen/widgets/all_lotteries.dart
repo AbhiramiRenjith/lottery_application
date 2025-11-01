@@ -48,7 +48,7 @@ class AllLotteries extends StatelessWidget {
               ),
               const Spacer(),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 3.h),
+                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 3.h),
                 decoration: BoxDecoration(
                   color: ColorConstants.greenClr,
                   borderRadius: BorderRadius.circular(4.r),
@@ -72,10 +72,8 @@ class AllLotteries extends StatelessWidget {
             physics: const NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-
-              
               mainAxisSpacing: 20.h,
-              childAspectRatio: 1.5,
+              childAspectRatio: 1.4,
             ),
             itemCount: allLotteries.length,
             itemBuilder: (context, index) {

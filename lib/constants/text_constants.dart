@@ -52,7 +52,7 @@ class TextConstants {
  static const recentFirstPrize = 'RECENT 1ST PRIZE WINNERS';
  static const latestLotteryWinners = 'Latest lottery winners';
  static const ticketNumber = 'TICKET NUMBER';
- static const prediction = 'Predicition';
+ static const prediction = 'Prediction';
  static const winDate = 'WON ON 15 OCT 2025';
  static const verified = 'VERIFIED';
  static const allLotteries = 'All Lotteries';
@@ -66,6 +66,11 @@ class TextConstants {
  static const preminum = 'premium';
  static const highplan = 'high';
  static const predication = 'Predication';
+ static const lotteryResults = 'Lottery Results';
+ static const enterNumber = 'Enter Number';
+ static const selectDate = 'Select Date';
+ static const check = 'CHECK';
+ static const consolationPrize = 'Consolation Prize';
 
  
 

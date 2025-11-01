@@ -8,10 +8,20 @@ import 'package:lottery_project/Authentication/views/verify_account_screen.dart'
 import 'package:lottery_project/Authentication/views/verify_succsessfull_screen.dart';
 import 'package:lottery_project/Authentication/views/welcome_screen.dart';
 import 'package:lottery_project/BottomNavigationBar/bottom_navigation_bar.dart';
+import 'package:lottery_project/HomeScreen/provider/plan_controller.dart';
+import 'package:lottery_project/resultScreen/views/lottery_result_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(const MyApp());
+  runApp(
+    
+      MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => PlanController()),
+      ],
+      child: const MyApp(),
+    ),);
 }
 
 class MyApp extends StatelessWidget {
@@ -32,8 +42,9 @@ class MyApp extends StatelessWidget {
             '/verify_success': (context) => VerifySuccsessfullScreen(),
             '/create_account': (context) => CreateAccountScreen(),
             '/bottonNav':(context) => BottomNavigationBarScreen(),
+            '/lotteryResult':(context) => LotteryResultScreen(),
           },
-          initialRoute: '/bottonNav',
+          initialRoute: '/lotteryResult',
         );
       },
     );
