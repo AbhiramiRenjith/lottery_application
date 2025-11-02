@@ -8,8 +8,9 @@ import 'package:lottery_project/Authentication/views/verify_account_screen.dart'
 import 'package:lottery_project/Authentication/views/verify_succsessfull_screen.dart';
 import 'package:lottery_project/Authentication/views/welcome_screen.dart';
 import 'package:lottery_project/BottomNavigationBar/bottom_navigation_bar.dart';
+import 'package:lottery_project/History/views/history_screen.dart';
 import 'package:lottery_project/HomeScreen/provider/plan_controller.dart';
-import 'package:lottery_project/resultScreen/views/lottery_result_screen.dart';
+import 'package:lottery_project/ResultScreen/views/lottery_result_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -41,10 +42,11 @@ class MyApp extends StatelessWidget {
             '/verify_account': (context) => VerifyAccountScreen(),
             '/verify_success': (context) => VerifySuccsessfullScreen(),
             '/create_account': (context) => CreateAccountScreen(),
-            '/bottonNav':(context) => BottomNavigationBarScreen(),
+            '/bottomNav':(context) => BottomNavigationBarScreen(),
             '/lotteryResult':(context) => LotteryResultScreen(),
+            '/history':(context) => HistoryScreen(),
           },
-          initialRoute: '/lotteryResult',
+          initialRoute: '/history',
         );
       },
     );

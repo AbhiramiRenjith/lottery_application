@@ -71,6 +71,7 @@ class TextConstants {
  static const selectDate = 'Select Date';
  static const check = 'CHECK';
  static const consolationPrize = 'Consolation Prize';
+ static const predictionHistory = 'Prediction History';
 
  
 

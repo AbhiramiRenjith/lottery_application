@@ -31,6 +31,9 @@ class ColorConstants {
   static const yellow = Color(0XFFFCC21B);
   static const hintColor = Color(0XFF949494);
   static const tableBorder = Color(0XFFCCC9C9);
-
+  static const containerBgGrey = Color(0XFFE9E9E9);
+  static const containerBorderGreyColor = Color(0XFFE2E2E2);
+  static const greyBlackColor = Color(0XFF525252);
+  static const divider = Color(0XFFEEEAEA);
 
 }

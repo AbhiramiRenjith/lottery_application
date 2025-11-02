@@ -5,11 +5,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottery_project/common_widgets/home_gradient_container.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
-import 'package:lottery_project/dummyData/dummyData.dart';
-import 'package:lottery_project/resultScreen/widget/consolation_prize.dart';
-import 'package:lottery_project/resultScreen/widget/lottery_datepicker_field.dart';
-import 'package:lottery_project/resultScreen/widget/lottery_number_drodown_field.dart';
-import 'package:lottery_project/resultScreen/widget/price_box.dart';
+import 'package:lottery_project/ResultScreen/widget/consolation_prize.dart';
+import 'package:lottery_project/ResultScreen/widget/lottery_datepicker_field.dart';
+import 'package:lottery_project/ResultScreen/widget/lottery_number_drodown_field.dart';
+import 'package:lottery_project/ResultScreen/widget/price_box.dart';
+import 'package:lottery_project/dummyData/dummy_data.dart';
 
 class LotteryResultScreen extends StatefulWidget {
   const LotteryResultScreen({super.key});

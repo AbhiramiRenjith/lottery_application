@@ -1,10 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottery_project/History/views/history_screen.dart';
 import 'package:lottery_project/HomeScreen/views/home_screen.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
-import 'package:lottery_project/resultScreen/views/lottery_result_screen.dart';
+import 'package:lottery_project/ResultScreen/views/lottery_result_screen.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
   const BottomNavigationBarScreen({super.key});
@@ -20,7 +21,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   final List<Widget> pages = [
     const HomeScreen(),
     const LotteryResultScreen(),
-    const Center(child: Text("History Screen")),
+    const HistoryScreen(),
     const Center(child: Text("Profile Screen")),
   ];
 
