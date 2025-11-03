@@ -36,7 +36,7 @@ class BackgroundContainerWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 42.w, top: 93.h),
+                        padding: EdgeInsets.only(left: 40.w, top: 93.h),
                         child: Text(
                           title,
                           style: GoogleFonts.poppins(

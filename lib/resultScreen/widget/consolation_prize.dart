@@ -74,15 +74,15 @@ class ConsolationPrize extends StatelessWidget {
             child: Table(
               border: TableBorder(
                 top: BorderSide(
-                  color: ColorConstants.borderColor,
+                  color: ColorConstants.tfborderGreyColor,
                   width: .5.w,
                 ),
                 horizontalInside: BorderSide(
-                  color: ColorConstants.borderColor,
+                  color: ColorConstants.tfborderGreyColor,
                   width: .5.w,
                 ),
                 verticalInside: BorderSide(
-                  color: ColorConstants.borderColor,
+                  color: ColorConstants.tfborderGreyColor,
                   width: .5.w,
                 ),
               ),

@@ -27,7 +27,7 @@ class CustomTextField extends StatelessWidget {
 
       style: GoogleFonts.poppins(
         color: ColorConstants.labelColor,
-        fontSize: 18,
+        fontSize:18 ,
         fontWeight: FontWeight.w400,
       ),
       decoration: InputDecoration(
@@ -38,9 +38,8 @@ class CustomTextField extends StatelessWidget {
           fontWeight: FontWeight.w400,
         ),
         floatingLabelBehavior: FloatingLabelBehavior.always,
-
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorConstants.borderColor),
+          borderSide: BorderSide(color: ColorConstants.tfborderGreyColor),
         ),
         suffixIcon: suffixIcon,
       ),

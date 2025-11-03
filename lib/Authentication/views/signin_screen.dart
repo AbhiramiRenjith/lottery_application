@@ -20,66 +20,67 @@ class SigninScreen extends StatelessWidget {
       title: TextConstants.helloSignin,
       child: Form(
         key: _formKey,
-        child: Column(
-          children: [
-            CustomTextField(
-              labelText: TextConstants.phoneNumber,
-              keyboardType: TextInputType.phone,
-              controller: _phoneNumberController,
-            ),
-            SizedBox(height: 30.h),
-            CustomTextField(
-              labelText: TextConstants.password,
-              obscureText: true,
-              controller: _passwordControllet,
-            ),
-            SizedBox(height: 20.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Transform.scale(
-                      scale: 1,
-                      child: Checkbox(
-                        value: true,
-                        onChanged: (value) {},
-                        activeColor: ColorConstants.gradientDarkBlue,
-
-                        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        child: Padding(
+          padding:  EdgeInsets.only(top: 20.h),
+          child: Column(
+            children: [
+              CustomTextField(
+                labelText: TextConstants.phoneNumber,
+                keyboardType: TextInputType.phone,
+                controller: _phoneNumberController,
+              ),
+              SizedBox(height: 50.h),
+              CustomTextField(
+                labelText: TextConstants.password,
+                obscureText: true,
+                controller: _passwordControllet,
+              ),
+              SizedBox(height: 20.h),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Transform.scale(
+                        scale: 1,
+                        child: Checkbox(
+                          value: true,
+                          onChanged: (value) {},
+                          activeColor: ColorConstants.gradientDarkBlue,
+                          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
                       ),
-                    ),
-                    Text(
-                      TextConstants.remenberMe,
+                      Text(
+                        TextConstants.remenberMe,
+                        style: GoogleFonts.poppins(
+                          fontSize: 15,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  ),
+          
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/forget_password');
+                    },
+                    child: Text(
+                      TextConstants.forgetPassword,
                       style: GoogleFonts.poppins(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
+                        color: ColorConstants.blackColor,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
                       ),
-                    ),
-                  ],
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/forget_password');
-                  },
-                  child: Text(
-                    TextConstants.forgetPassword,
-                    style: GoogleFonts.poppins(
-                      color: ColorConstants.blackColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 15,
                     ),
                   ),
-                ),
-              ],
-            ),
-
-            SizedBox(height: 35.h),
-
-            CustomButton(text: TextConstants.signIn, onPressed: () {}),
-            SizedBox(height: 10.h),
-            DonthaveaccountTextWidget(),
-          ],
+                ],
+              ),
+              SizedBox(height: 35.h),
+              CustomButton(text: TextConstants.signIn, onPressed: () {}),
+              SizedBox(height: 10.h),
+              DonthaveaccountTextWidget(),
+            ],
+          ),
         ),
       ),
     );

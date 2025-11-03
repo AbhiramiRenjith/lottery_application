@@ -93,20 +93,21 @@ class CreateAccountScreen extends StatelessWidget {
                     style: GoogleFonts.poppins(
                       fontSize: 15,
                       fontWeight: FontWeight.w500,
-                      color: ColorConstants.greyColor,
+                      color: ColorConstants.greyText,
                     ),
                   ),
+                  SizedBox(width:5),
                   TextButton(
                     style: TextButton.styleFrom(
                       padding: EdgeInsets.zero,
-                      minimumSize: const Size(0, 0),
-                      // tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                      minimumSize:  Size(0.w, 0.h),
+                      
                     ),
                     onPressed: () {},
                     child: Text(
                       TextConstants.login,
                       style: GoogleFonts.poppins(
-                        color: ColorConstants.textbuttonColor,
+                        color: ColorConstants.blueTextButton,
                         fontWeight: FontWeight.w600,
                         fontSize: 15,
                       ),

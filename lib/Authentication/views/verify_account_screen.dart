@@ -23,9 +23,9 @@ class VerifyAccountScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: List.generate(4, (index) {
               return Container(
-                width: 54.w,
-                height: 54.h,
-                margin: EdgeInsets.symmetric(horizontal: 8.w),
+                width: 60.w,
+                height: 60.h,
+               margin: EdgeInsets.symmetric(horizontal: 8.w),
                 child: TextField(
                   textAlign: TextAlign.center,
                   keyboardType: TextInputType.number,
@@ -54,23 +54,24 @@ class VerifyAccountScreen extends StatelessWidget {
           ),
 
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25.w),
+            padding: EdgeInsets.symmetric(horizontal: 12.w),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+             
               children: [
                 Text(
                   TextConstants.resentOtp,
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w600,
-                    fontSize: 15,
+                    fontSize: 13,
                     color: ColorConstants.redColor,
                   ),
                 ),
+                Spacer(),
                 Text(
                   "1:25",
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w500,
-                    fontSize: 18,
+                    fontSize: 20,
                     color: ColorConstants.gradientDarkBlue,
                   ),
                 ),

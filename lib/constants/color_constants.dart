@@ -6,14 +6,20 @@ class ColorConstants {
   static const whiteColor = Color(0xFFFFFFFF);
   static const transparent = Colors.transparent;
   static const blackColor = Color(0XFF000000);
-  static const gradientDarkGrey = Color.fromRGBO(217, 217, 217, 1);
-  static const gradientLigntgrey = Color.fromRGBO(248, 50, 50, 0);
-  static const greyColor = Color(0xFF676767);
-  static const textbuttonColor = Color(0xFF81A6EE);
   static const labelColor = Color(0xFF888888);
-  static const borderColor = Color(0xFFC1C1C1);
-  static const otpBoxColr = Color(0XFFD4D4D4);
+  static const  tfborderGreyColor = Color(0xFFC1C1C1);
+  static const gradientDarkGrey = Color.fromRGBO(217, 217, 217, 1);
+  static const gradientLigntgrey = Color.fromRGBO(217, 217, 217, 0);
+  static const greyColor = Color(0xFF676767);
+  static const greyText =Color(0XFF817E7E);
   static const redColor = Color(0XFFFF0D0D);
+  static const otpBoxColr = Color(0XFFD4D4D4);
+  static const blueTextButton = Color(0xFF81A6EE);
+
+
+
+
+
   static const shadowClr = Color(0x40000000);
   static const blueColor = Color(0XFF1976D2);
   static const homeGradientLightBlue = Color(0XFF66BDFF);

@@ -75,13 +75,12 @@ class DonthaveaccountTextWidget extends StatelessWidget {
               style: TextButton.styleFrom(
                 padding: EdgeInsets.zero,
                 minimumSize: const Size(0, 0),
-                // tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               ),
               onPressed: () {},
               child: Text(
                 TextConstants.signUpTextButton,
                 style: GoogleFonts.poppins(
-                  color: ColorConstants.textbuttonColor,
+                  color: ColorConstants.blueTextButton,
                   fontWeight: FontWeight.w600,
                   fontSize: 15,
                 ),

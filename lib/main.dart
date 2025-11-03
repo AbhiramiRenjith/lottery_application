@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
             '/lotteryResult':(context) => LotteryResultScreen(),
             '/history':(context) => HistoryScreen(),
           },
-          initialRoute: '/history',
+          initialRoute: '/bottomNav',
         );
       },
     );
