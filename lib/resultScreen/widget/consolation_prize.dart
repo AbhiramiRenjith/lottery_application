@@ -4,18 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
+import 'package:lottery_project/dummyData/dummy_data.dart';
 
 class ConsolationPrize extends StatelessWidget {
   const ConsolationPrize({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final List<String> consolationPrizes = [
-      'DY86758', 'DY12345', 'DY34567', 'DY98765',
-      'DY45678', 'DY87654', 'DY11223', 'DY77889',
-      'DY33445', 'DY99887', 'DY44556',
-    ];
-
+ 
     return Container(
       margin: EdgeInsets.symmetric(vertical: 8.h),
       decoration: BoxDecoration(
@@ -108,6 +104,7 @@ class ConsolationPrize extends StatelessWidget {
   Widget _buildCell(String text) {
     return Container(
       height: 50.h,
+    
       alignment: Alignment.center,
       child: Text(
         text,

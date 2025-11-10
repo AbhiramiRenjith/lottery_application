@@ -16,17 +16,23 @@ class CreateNewPasswordScreen extends StatefulWidget {
 class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
   bool _obscureNewPassword = true;
   bool _obscurePassword = true;
+  final _newPassController = TextEditingController();
+  final _conformPassController = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     return BackgroundContainerWidget(
       title: TextConstants.createNewPass,
       child: Form(
+        key: _formKey,
         child: Column(
           children: [
             CustomTextField(
+              controller: _newPassController,
               labelText: TextConstants.newPass,
               obscureText: _obscureNewPassword,
+
               suffixIcon: GestureDetector(
                 onTap: () {
                   setState(() {
@@ -38,12 +44,22 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                       ? Icons.visibility_off_outlined
                       : Icons.visibility_outlined,
                   color: ColorConstants.blackColor,
-                  size: 16,
+                  size: 16.sp,
                 ),
               ),
+              validator: (value){
+                     if (value == null || value.isEmpty) {
+                    return 'Please enter password';
+                  }else if(_newPassController.text.trim() != _conformPassController.text.trim()){
+      return 'Passwords do not match';
+    }
+                  return null;
+
+              },
             ),
             SizedBox(height: 50.h),
             CustomTextField(
+              controller: _conformPassController,
               labelText: TextConstants.conformPass,
               obscureText: _obscurePassword,
               suffixIcon: GestureDetector(
@@ -57,20 +73,36 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                       ? Icons.visibility_off_outlined
                       : Icons.visibility_outlined,
                   color: ColorConstants.blackColor,
-                  size: 16,
+                  size: 16.sp,
                 ),
               ),
+              validator: (value){
+                        if (value == null || value.isEmpty) {
+                    return 'Please enter password';
+                  }else if(_newPassController.text.trim() != _conformPassController.text.trim()){
+      return 'Passwords do not match';
+    }
+                  return null;
+              },
             ),
-            SizedBox(height: 100),
+            SizedBox(height: 100.h),
             CustomButton(
               text: TextConstants.resetpass,
               onPressed: () {
-                Navigator.pushNamed(context, '/verify_success');
+                validation();
+              
               },
             ),
           ],
         ),
       ),
     );
+  }
+  void validation(){
+    if(_formKey.currentState!.validate()){
+        Navigator.pushNamed(context, '/verify_success');
+      
+    }
+    
   }
 }

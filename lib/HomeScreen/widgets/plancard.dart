@@ -1,5 +1,4 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,7 +29,7 @@ class PlanCard extends StatelessWidget {
         width: double.infinity,
         padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10.r),
+          borderRadius: BorderRadius.circular(10),
           image: const DecorationImage(
             image: AssetImage('images/bgImage.jpg'),
             fit: BoxFit.cover,
@@ -79,23 +78,28 @@ class PlanCard extends StatelessWidget {
            
             if (planType == TextConstants.freePlan)
               Container(
-                width: 70,
-                height: 22,
-                decoration: BoxDecoration(
-                  color: ColorConstants.greenClr,
-                  borderRadius: BorderRadius.circular(50.r),
-                ),
-                child: Center(
-                  child: Text(
-                    TextConstants.freePlan,
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w600,
-                      color: ColorConstants.whiteColor,
-                      fontSize: 12
-                    ),
-                  ),
-                ),
-              )
+  width: 60.w,
+  height: 22.h,
+  decoration: BoxDecoration(
+    color: ColorConstants.greenClr,
+    borderRadius: BorderRadius.circular(10.r),
+  ),
+  child: Center(
+    child: FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Text(
+        TextConstants.freePlan,
+        style: GoogleFonts.poppins(
+          fontWeight: FontWeight.w600,
+          color: ColorConstants.whiteColor,
+          fontSize: 10.sp,
+        ),
+      ),
+    ),
+  ),
+)
+
+        
             else
             Column(
               children: [
@@ -107,7 +111,7 @@ class PlanCard extends StatelessWidget {
                       color: planType == TextConstants.upgradePlan
                           ? ColorConstants.yellow
                           : ColorConstants.whiteColor,
-                      fontSize: 18.sp,
+                      fontSize: 16.sp,
                     ),
                   ),
 
@@ -126,14 +130,15 @@ class PlanCard extends StatelessWidget {
       case TextConstants.upgradePlan:
         return Image.asset(
           'images/upgrade.png',
-          width: 22.w,
-          height: 22.w,
+          width: 25.w,
+          height: 25.h,
+          fit: BoxFit.contain,
         );
 
 
       case TextConstants.elitePlan:
         return Icon(Icons.workspace_premium,
-            color: Colors.white, size: 25.sp);
+            color: ColorConstants.whiteColor, size: 25.sp);
 
       case TextConstants.preminumPlan:
         return Icon(Icons.diamond_outlined, color: Colors.white, size:30.sp);

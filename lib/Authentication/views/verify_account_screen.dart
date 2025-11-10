@@ -8,8 +8,11 @@ import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
 
 class VerifyAccountScreen extends StatelessWidget {
-  const VerifyAccountScreen({super.key});
-
+  VerifyAccountScreen({super.key});
+  final List<TextEditingController> otpControllers = List.generate(
+    4,
+    (_) => TextEditingController(),
+  );
   @override
   Widget build(BuildContext context) {
     return BackgroundContainerWidget(
@@ -25,13 +28,14 @@ class VerifyAccountScreen extends StatelessWidget {
               return Container(
                 width: 60.w,
                 height: 60.h,
-               margin: EdgeInsets.symmetric(horizontal: 8.w),
+                margin: EdgeInsets.symmetric(horizontal: 8.w),
                 child: TextField(
+                  controller: otpControllers[index],
                   textAlign: TextAlign.center,
                   keyboardType: TextInputType.number,
                   maxLength: 1,
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.w600,
                   ),
                   decoration: InputDecoration(
@@ -52,17 +56,15 @@ class VerifyAccountScreen extends StatelessWidget {
               );
             }),
           ),
-
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 12.w),
             child: Row(
-             
               children: [
                 Text(
                   TextConstants.resentOtp,
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w600,
-                    fontSize: 13,
+                    fontSize: 13.sp,
                     color: ColorConstants.redColor,
                   ),
                 ),
@@ -71,7 +73,7 @@ class VerifyAccountScreen extends StatelessWidget {
                   "1:25",
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w500,
-                    fontSize: 20,
+                    fontSize: 20.sp,
                     color: ColorConstants.gradientDarkBlue,
                   ),
                 ),
@@ -82,7 +84,7 @@ class VerifyAccountScreen extends StatelessWidget {
           CustomButton(
             text: TextConstants.verify,
             onPressed: () {
-              Navigator.pushNamed(context, '/create_new_pass');
+              validate(context);
             },
           ),
           SizedBox(height: 15.h),
@@ -90,5 +92,31 @@ class VerifyAccountScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void validate(BuildContext context) {
+    String otp = otpControllers.map((e) => e.text).join();
+    if (otp.length == 4) {
+      Navigator.pushNamed(context, '/create_new_pass');
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12.r),
+            ),
+            title:  Text(TextConstants.alert),
+            content:  Text(TextConstants.pleaseEnterOtp),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.pop(context),
+                child:  Text(TextConstants.ok),
+              ),
+            ],
+          );
+        },
+      );
+    }
   }
 }

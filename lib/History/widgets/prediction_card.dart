@@ -26,7 +26,15 @@ class PredictionCard extends StatelessWidget {
       margin: EdgeInsets.only(bottom: 12.h),
       padding: EdgeInsets.only(left: 15,right:15,top: 6 ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12.r),
+        borderRadius: BorderRadius.circular(12),
+        color: ColorConstants.whiteColor,
+        boxShadow: [
+          BoxShadow(
+            color: ColorConstants.lightGrey,
+            offset: Offset(1, 1),
+            blurRadius: 4
+          )
+        ],
         
         border: Border.all(color: ColorConstants.containerBorderGreyColor),
       ),
@@ -40,7 +48,7 @@ class PredictionCard extends StatelessWidget {
             lotteryName,
             style: GoogleFonts.poppins(
               fontWeight: FontWeight.w500,
-              fontSize: 18.sp,
+              fontSize: 18,
             ),
           ),
                              Column(
@@ -50,7 +58,7 @@ class PredictionCard extends StatelessWidget {
                     color: status == "Pending"
                       ? ColorConstants.yellow
                       : ColorConstants.greenClr,fontWeight: FontWeight.w400,
-                      fontSize: 12.sp
+                      fontSize: 12
                   ),
                   ),
                   SizedBox(height: 5),
@@ -80,7 +88,7 @@ class PredictionCard extends StatelessWidget {
                     Text(
                 date,
                 style: GoogleFonts.poppins(
-                  fontSize: 15.sp,
+                  fontSize: 15,
                   fontWeight: FontWeight.w400
                   
                 ),
@@ -94,7 +102,7 @@ class PredictionCard extends StatelessWidget {
           Text(
             prize,
             style: GoogleFonts.poppins(
-              fontSize: 14.sp,
+              fontSize: 14,
               color: ColorConstants.greyBlackColor,
               fontWeight: FontWeight.w400
 
@@ -103,10 +111,10 @@ class PredictionCard extends StatelessWidget {
           SizedBox(height: 8.h),
 
        Container(
-  padding: EdgeInsets.all(2.w),
+  padding: EdgeInsets.all(2),
   decoration: BoxDecoration(
     border: Border.all(color: ColorConstants.homeGradientLightBlue),
-    borderRadius: BorderRadius.circular(8.r),
+    borderRadius: BorderRadius.circular(5),
   ),
   child: Center(
     child: RichText(
@@ -117,7 +125,7 @@ class PredictionCard extends StatelessWidget {
             style: GoogleFonts.poppins(
               color: Colors.blue,
               fontWeight: FontWeight.w400,
-              fontSize: 12.sp,
+              fontSize: 12,
             ),
           ),
           TextSpan(
@@ -125,7 +133,7 @@ class PredictionCard extends StatelessWidget {
             style: GoogleFonts.poppins(
               color: Colors.black,
               fontWeight: FontWeight.w400,
-              fontSize: 12.sp,
+              fontSize: 12,
             ),
           ),
         ],
@@ -152,7 +160,7 @@ class PredictionCard extends StatelessWidget {
                    Text(
               "Result: $result",
               style: GoogleFonts.poppins(
-                fontSize: 14.sp,
+                fontSize: 14,
                 color: ColorConstants.greyBlackColor,
                 fontWeight: FontWeight.w400
               ),

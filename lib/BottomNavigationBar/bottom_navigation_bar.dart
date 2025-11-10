@@ -6,6 +6,7 @@ import 'package:lottery_project/HomeScreen/views/home_screen.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
 import 'package:lottery_project/ResultScreen/views/lottery_result_screen.dart';
+import 'package:lottery_project/profile/views/profile_screen.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
   const BottomNavigationBarScreen({super.key});
@@ -22,7 +23,7 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
     const HomeScreen(),
     const LotteryResultScreen(),
     const HistoryScreen(),
-    const Center(child: Text("Profile Screen")),
+    const ProfileScreen(),
   ];
 
   @override

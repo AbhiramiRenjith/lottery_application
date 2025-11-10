@@ -6,7 +6,8 @@ class ColorConstants {
   static const whiteColor = Color(0xFFFFFFFF);
   static const transparent = Colors.transparent;
   static const blackColor = Color(0XFF000000);
-  static const labelColor = Color(0xFF888888);
+
+  static const labelTextGreyColor = Color(0xFF888888);
   static const  tfborderGreyColor = Color(0xFFC1C1C1);
   static const gradientDarkGrey = Color.fromRGBO(217, 217, 217, 1);
   static const gradientLigntgrey = Color.fromRGBO(217, 217, 217, 0);
@@ -15,19 +16,15 @@ class ColorConstants {
   static const redColor = Color(0XFFFF0D0D);
   static const otpBoxColr = Color(0XFFD4D4D4);
   static const blueTextButton = Color(0xFF81A6EE);
-
-
-
-
-
-  static const shadowClr = Color(0x40000000);
-  static const blueColor = Color(0XFF1976D2);
   static const homeGradientLightBlue = Color(0XFF66BDFF);
   static const homeGradientDarkBlue = Color(0XFF065087);
+  static const blueColor = Color(0XFF1976D2);
   static const notification = Color(0XFFFF7070);
   static const greenClr = Color(0XFF19A827);
   static const lightGrey = Color(0XFFC9C9C9);
   static const blackGrey = Color(0XFF4C4C4C);
+  static const prizeGreyColor = Color(0XFF737373);
+  static const shadowClr = Color(0x40000000);
   static const grey = Color(0XFFEEEEEE);
   static const lightBlue20 = Color(0x33B3DEFF);
   static const lightBlue30 = Color(0x4D66BDFF);
@@ -35,11 +32,21 @@ class ColorConstants {
   static const dividerBlue = Color(0XFFC0E4FF);
   static const darkGreen = Color(0XFF2E7D32);
   static const yellow = Color(0XFFFCC21B);
-  static const hintColor = Color(0XFF949494);
   static const tableBorder = Color(0XFFCCC9C9);
   static const containerBgGrey = Color(0XFFE9E9E9);
   static const containerBorderGreyColor = Color(0XFFE2E2E2);
   static const greyBlackColor = Color(0XFF525252);
   static const divider = Color(0XFFEEEAEA);
-
+  static const black = Color(0XFF282A37);
+  static const blue = Color(0XFF0060F0);
+  static const darkBlue600 = Color(0XFF515978);
+  static const lightGreen = Color(0XFF90E699);
+  static const containerLightGreyBorder = Color(0XFFDEDBDB);
+  static const dividerColor = Color(0XFFE4E4E4);
+  static const iconGreyColor = Color(0XFF4C4C4C);
+  static const labelGreyColor = Color(0XFF505050);
+  static const greyColorText = Color(0XFF686767);
+  static const iconLightGreyColor = Color(0XFF515151);
+  static const darkRed = Color(0XFFD22525);
+  static const lightGreencolor = Color(0XFF5BE969);
 }

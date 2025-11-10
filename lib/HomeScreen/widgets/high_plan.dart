@@ -8,136 +8,168 @@ class HighPlan extends StatelessWidget {
   const HighPlan({super.key});
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return SizedBox(
-      
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-       
         children: [
           Padding(
-            padding:  EdgeInsets.only(top: 25.h),
+            padding: EdgeInsets.only(top: 25.h),
             child: Container(
-              height: 110,
-             
               decoration: BoxDecoration(
                 color: ColorConstants.whiteColor,
-                borderRadius: BorderRadius.circular(10),
-               boxShadow: [
-                BoxShadow(
-                  color: ColorConstants.homeGradientDarkBlue,
-                  
-                  blurRadius: 4
-                ),
-                
-               ]
+                borderRadius: BorderRadius.circular(10.r),
+                boxShadow: [
+                  BoxShadow(
+                    color: ColorConstants.homeGradientDarkBlue,
+                    blurRadius: 4.r,
+                  ),
+                ],
               ),
               child: Padding(
-                padding:  EdgeInsets.only(top: 10.h,left: 18.w),
+                padding: EdgeInsets.only(top: 15.h, left: 18.w),
                 child: Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
-                      children: [  
-                        Container(
-                          width: 3,
-                          height: 22,
-                          decoration: BoxDecoration(
-                            color: ColorConstants.blueColor
-                
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 5.h),
+                            child: Container(
+                              width: 2.w,
+                              height: 16.sp,
+                              color: ColorConstants.blueColor,
+                            ),
                           ),
                         ),
-                        SizedBox(width: 7),
-                        Text(TextConstants.todayFeaturedprediction,style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 18,
-                          color: ColorConstants.blueColor,
-                        ),),
+                        SizedBox(width: 7.w),
+                        Text(
+                          TextConstants.todayFeaturedprediction,
+                          style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 17.sp,
+                            color: ColorConstants.blueColor,
+                          ),
+                        ),
+
                         Spacer(),
-                             Container(
-                      width:50.w ,
-                      height: 15.h,
-                      decoration: BoxDecoration(
-                        color: ColorConstants.darkGreen,
-                        borderRadius: BorderRadius.circular(2)
-                        
-                      ),
-                      child: Center(
-                        child: Text(TextConstants.high,style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w500,
-                          color: ColorConstants.whiteColor,
-                          fontSize: 13,
-                        ),),
-                      ),
-                
-                    ),
-                    SizedBox(width: 10)
+
+                        Padding(
+                          padding: EdgeInsets.only(top: 10.h),
+                          child: Container(
+                            width: 42.w,
+                            height: 22.h,
+                            decoration: BoxDecoration(
+                              color: ColorConstants.darkGreen,
+                              borderRadius: BorderRadius.circular(5.r),
+                            ),
+                            child: Center(
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  TextConstants.high,
+                                  style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w400,
+                                    color: ColorConstants.whiteColor,
+                                    fontSize: 14.sp,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        SizedBox(width: 10.w),
                       ],
                     ),
                     SizedBox(height: 5.h),
-                    Text(TextConstants.keralaLotteryFirstPrice,style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w500
-                    ),),
-                    SizedBox(height: 5),
+                    Text(
+                      TextConstants.keralaLotteryFirstPrice,
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15.sp,
+                      ),
+                    ),
+                    SizedBox(height: 5.h),
                     Row(
-                      
-                      children: List.generate(5, (index){
+                      children: List.generate(5, (index) {
                         return Padding(
-                          padding: const EdgeInsets.only(right: 10),
+                          padding: EdgeInsets.only(right: 10.w),
+
                           child: Container(
-                            width: 42,
-                            height: 20,
+                            width: 42.w,
+                            height: 22.h,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(2),
-                              gradient: LinearGradient(colors: [
-                                 ColorConstants.homeGradientDarkBlue,
-                                ColorConstants.homeGradientLightBlue,
-                               
-                                        
-                                
-                              ]),
-                              
+                              gradient: LinearGradient(
+                                colors: [
+                                  ColorConstants.homeGradientDarkBlue,
+                                  ColorConstants.homeGradientLightBlue,
+                                ],
+                              ),
+                              borderRadius: BorderRadius.circular(5.r),
                             ),
                             child: Center(
-                              child: Text(
-                                TextConstants.priceNumber,
-                                textAlign: TextAlign.center,
-                                style: GoogleFonts.poppins(fontWeight: FontWeight.w500,
-                              color: ColorConstants.whiteColor),),
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Text(
+                                  TextConstants.priceNumber,
+                                  style: GoogleFonts.poppins(
+                                    fontWeight: FontWeight.w400,
+                                    color: ColorConstants.whiteColor,
+                                    fontSize: 14.sp,
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         );
-                      })
+                      }),
                     ),
-                    SizedBox(height: 5),
+                    SizedBox(height: 10.h),
                     Row(
                       children: [
-                        Image.asset('images/calender.png',width: 18,height: 18,),
-                        SizedBox(width: 5),
-                        Text(TextConstants.predictionFor,style: GoogleFonts.poppins(fontWeight: FontWeight.w400),)
-                
+                        Image.asset(
+                          'images/calender.png',
+                          width: screenWidth * 0.03,
+                          height: screenWidth * 0.03,
+                        ),
+                        SizedBox(width: 5.w),
+                        Text(
+                          TextConstants.predictionFor,
+                          style: GoogleFonts.poppins(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12.sp,
+                          ),
+                        ),
                       ],
-                    )
-                       
+                    ),
+                    SizedBox(height: 10.h),
                   ],
                 ),
               ),
-              
             ),
           ),
-          SizedBox(height: 10),
-          
+          SizedBox(height: 10.h),
           Container(
-            height: 35,
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(vertical: 8.h),
             decoration: BoxDecoration(
               color: ColorConstants.whiteColor,
-              borderRadius: BorderRadius.circular(5)
-
+              borderRadius: BorderRadius.circular(8.r),
             ),
-            child: Center(child: Text(TextConstants.yourActivePlan,style: GoogleFonts.poppins(
-              fontWeight: FontWeight.w500,
-              fontSize: 16
-            ),)),
-          )
+            child: Center(
+              child: Text(
+                TextConstants.yourActivePlan,
+                style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16.sp,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

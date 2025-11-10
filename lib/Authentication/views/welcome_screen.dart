@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottery_project/constants/color_constants.dart';
-import 'package:lottery_project/constants/radius_constants.dart';
+
 import 'package:lottery_project/constants/text_constants.dart';
 
 class WelcomeScreen extends StatelessWidget {
@@ -41,13 +41,11 @@ class WelcomeScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w600,
-                    fontSize: 35,
+                    fontSize: 35.sp,
                     color: ColorConstants.whiteColor,
                   ),
                 ),
-
                 SizedBox(height: 100.h),
-
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/signin');
@@ -60,22 +58,20 @@ class WelcomeScreen extends StatelessWidget {
                       width: 1.w,
                     ),
                     shape: RoundedRectangleBorder(
-                      borderRadius: RadiusConstants.largeBtnRadius,
+                      borderRadius: BorderRadius.circular(50),
                     ),
-                    fixedSize: Size(305.w, 57.h),
+                    minimumSize: Size(305.w, 57.h),
                   ),
                   child: Text(
                     TextConstants.signIn,
                     style: GoogleFonts.poppins(
                       color: ColorConstants.whiteColor,
-                      fontSize: 22,
+                      fontSize: 22.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
-
                 SizedBox(height: 35.h),
-
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pushNamed(context, '/create_account');
@@ -85,31 +81,29 @@ class WelcomeScreen extends StatelessWidget {
                     shadowColor: ColorConstants.transparent,
                     side: BorderSide(
                       color: ColorConstants.whiteColor,
-                      width: 1,
+                      width: 1.w,
                     ),
                     shape: RoundedRectangleBorder(
-                      borderRadius: RadiusConstants.largeBtnRadius,
+                      borderRadius: BorderRadius.circular(50),
                     ),
-                    fixedSize: Size(305.w, 57.h),
+                    minimumSize: Size(305.w, 57.h),
                   ),
                   child: Text(
                     TextConstants.signUp,
                     style: GoogleFonts.poppins(
                       color: ColorConstants.blackColor,
-                      fontSize:22,
+                      fontSize: 22.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
-
                 SizedBox(height: 50.h),
-
                 TextButton(
                   onPressed: () {},
                   child: Text(
                     TextConstants.loginWithSocialMedia,
                     style: GoogleFonts.poppins(
-                      fontSize: 15,
+                      fontSize: 15.sp,
                       fontWeight: FontWeight.w500,
                       color: ColorConstants.whiteColor,
                     ),

@@ -17,7 +17,7 @@ class DonthaveaccountTextWidget extends StatelessWidget {
           children: [
             Container(
               width: 98.w,
-              height: 1,
+              height: 1.h,
 
               decoration: BoxDecoration(
                 gradient: LinearGradient(
@@ -37,13 +37,13 @@ class DonthaveaccountTextWidget extends StatelessWidget {
               style: GoogleFonts.poppins(
                 color: ColorConstants.greyColor,
                 fontWeight: FontWeight.w500,
-                fontSize: 15,
+                fontSize: 15.sp,
               ),
             ),
             SizedBox(width: 8.w),
             Container(
               width: 98.w,
-              height: 1,
+              height: 1.h,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
@@ -65,24 +65,26 @@ class DonthaveaccountTextWidget extends StatelessWidget {
             Text(
               TextConstants.donthaveAccount,
               style: GoogleFonts.poppins(
-                fontSize: 15,
+                fontSize: 15.sp,
                 fontWeight: FontWeight.w500,
                 color: ColorConstants.greyColor,
               ),
             ),
-            SizedBox(width: 5),
+            SizedBox(width: 5.w),
             TextButton(
               style: TextButton.styleFrom(
                 padding: EdgeInsets.zero,
-                minimumSize: const Size(0, 0),
+                minimumSize:  Size(0.w, 0.h),
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/create_account');
+              },
               child: Text(
                 TextConstants.signUpTextButton,
                 style: GoogleFonts.poppins(
                   color: ColorConstants.blueTextButton,
                   fontWeight: FontWeight.w600,
-                  fontSize: 15,
+                  fontSize: 15.sp,
                 ),
               ),
             ),

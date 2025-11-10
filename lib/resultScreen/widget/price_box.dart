@@ -26,7 +26,7 @@ class PriceBox extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: ColorConstants.gradientDarkGrey,
-            blurRadius: 3,
+            blurRadius: 3.r,
             offset: const Offset(2, 5),
           ),
         ],
@@ -50,7 +50,7 @@ class PriceBox extends StatelessWidget {
                 style: GoogleFonts.poppins(
                   fontWeight: FontWeight.w600,
                   color: ColorConstants.whiteColor,
-                  fontSize: 20
+                  fontSize: 20.sp
                 ),
               ),
             ),
@@ -63,7 +63,7 @@ class PriceBox extends StatelessWidget {
                   prize,
                   style: GoogleFonts.poppins(fontSize: 18.sp,fontWeight: FontWeight.w500),
                 ),
-                SizedBox(height: 5),
+                SizedBox(height: 5.h),
                 
                 Text(
                   number,
@@ -74,13 +74,13 @@ class PriceBox extends StatelessWidget {
                     
                   ),
                 ),
-                SizedBox(height: 5),
+                SizedBox(height: 5.h),
                 Text(
                   place,
                   style: GoogleFonts.poppins(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w400,
-                    color: ColorConstants.greyColor
+                    color: ColorConstants.prizeGreyColor
                     ),
                 ),
               ],

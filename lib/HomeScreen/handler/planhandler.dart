@@ -14,8 +14,6 @@ class PlanWidgetHandler {
           description: TextConstants.limitedAccess,
           descriptionColor: ColorConstants.whiteColor,
           planType: TextConstants.freePlan,
-        
-
         );
 
       case TextConstants.upgrade:

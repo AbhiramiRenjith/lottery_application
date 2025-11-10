@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -43,45 +42,50 @@ class _LotteryResultScreenState extends State<LotteryResultScreen> {
                     ),
                   ),
                   const Spacer(),
-                  const Icon(
+                  Icon(
                     Icons.qr_code_scanner,
                     color: ColorConstants.whiteColor,
+                    size: 25.sp,
                   ),
                 ],
               ),
               SizedBox(height: 15.h),
-
-              
               LotteryNumberDropdownField(controller: numberController),
               SizedBox(height: 10.h),
-
-             
               LotteryDatePickerField(controller: dateController),
               SizedBox(height: 15.h),
-
-             
               ElevatedButton(
                 style: ButtonStyle(
                   elevation: WidgetStateProperty.all(5),
-                  shadowColor:
-                      WidgetStateProperty.all(ColorConstants.blackColor),
-                  backgroundColor:
-                      WidgetStateProperty.all(ColorConstants.whiteColor),
+                  shadowColor: WidgetStateProperty.all(
+                    ColorConstants.blackColor,
+                  ),
+                  backgroundColor: WidgetStateProperty.all(
+                    ColorConstants.whiteColor,
+                  ),
                   shape: WidgetStateProperty.all(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  minimumSize:
-                      WidgetStateProperty.all( Size(double.infinity, 45.h)),
+                  minimumSize: WidgetStateProperty.all(
+                    Size(double.infinity, 45.h),
+                  ),
                 ),
                 onPressed: () {
                   setState(() {
                     if (numberController.text.isNotEmpty &&
                         dateController.text.isNotEmpty) {
                       showPrizeList = true;
+                   
                     } else {
                       showPrizeList = false;
+                         ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: const Text('textfield is empty'),
+                     
+                        ),
+                      );
                     }
                   });
                 },
@@ -90,7 +94,8 @@ class _LotteryResultScreenState extends State<LotteryResultScreen> {
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w500,
                     color: ColorConstants.blueColor,
-                    fontSize: 20,
+                    fontSize: 16.sp,
+                    
                   ),
                 ),
               ),
@@ -98,11 +103,9 @@ class _LotteryResultScreenState extends State<LotteryResultScreen> {
             ],
           ),
         ),
-
-        
         child: Padding(
-          padding:  EdgeInsets.only(top: 30,left: 15.w,right: 15.w),
-          child:showPrizeList
+          padding: EdgeInsets.only(top: 30.h, left: 15.w, right: 15.w),
+          child: showPrizeList
               ? ListView(
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
@@ -123,8 +126,6 @@ class _LotteryResultScreenState extends State<LotteryResultScreen> {
                     'images/banner.png',
                     height: 250.h,
                     width: 500.w,
-                    
-                   
                     fit: BoxFit.cover,
                   ),
                 ),

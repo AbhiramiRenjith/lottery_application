@@ -30,16 +30,20 @@ class _LotteryNumberDropdownFieldState
             boxShadow: [
               BoxShadow(
                 color: ColorConstants.blueColor,
-                blurRadius: 10,
-                spreadRadius: 1,
+                blurRadius: 10.r,
+                spreadRadius: 1.r,
                 offset: const Offset(2, 3),
               ),
             ],
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(15.r),
           ),
           child: TextFormField(
            
            controller: widget.controller, 
+           style: GoogleFonts.poppins(
+            fontWeight: FontWeight.w500,
+            fontSize: 18.sp
+           ),
             decoration: InputDecoration(
               hint: Center(
                 child: Text(
@@ -49,36 +53,43 @@ class _LotteryNumberDropdownFieldState
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w500,
                     color: selectedLottery.isEmpty
-                        ? ColorConstants.hintColor
+                        ? ColorConstants.labelTextGreyColor
                         : ColorConstants.blackColor,
-                    fontSize: 15,
+                    fontSize: 15.sp,
                   ),
                 ),
               ),
               filled: true,
               fillColor: ColorConstants.whiteColor,
-              contentPadding: EdgeInsets.symmetric(vertical: 0),
+              contentPadding: EdgeInsets.symmetric(vertical: 0,),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
                 borderSide: BorderSide.none,
               ),
-              prefixIcon: Container(
-                decoration: const BoxDecoration(
-                  color: ColorConstants.blueColor,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    bottomLeft: Radius.circular(15),
-                  ),
-                ),
-                child: const Icon(Icons.search, color: ColorConstants.whiteColor, size: 30),
+                   prefixIcon: Container(
+              width: 38.sp,
+              height: 55.sp,
+            decoration: const BoxDecoration(
+              color: ColorConstants.blueColor,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(15),
+                bottomLeft: Radius.circular(15),
               ),
+            ),
+            child:  Icon(
+              Icons.search,
+              color: ColorConstants.whiteColor,
+              size: 30.sp,
+            ),
+          ),
+      
               suffixIcon: IconButton(
                 icon: Icon(
                   showDropdown
                       ? Icons.keyboard_arrow_up
                       : Icons.keyboard_arrow_down,
                   color: ColorConstants.greyColor,
-                  size: 28,
+                  size: 28.sp,
                 ),
                 onPressed: () {
                   setState(() {
@@ -93,7 +104,7 @@ class _LotteryNumberDropdownFieldState
        
         if (showDropdown)
           Container(
-            margin: EdgeInsets.only(top: 8.h),
+            margin: EdgeInsets.only(top: 8),
             decoration: BoxDecoration(
               color: ColorConstants.whiteColor,
               borderRadius: BorderRadius.circular(12.r),

@@ -10,16 +10,24 @@ import 'package:lottery_project/Authentication/views/welcome_screen.dart';
 import 'package:lottery_project/BottomNavigationBar/bottom_navigation_bar.dart';
 import 'package:lottery_project/History/views/history_screen.dart';
 import 'package:lottery_project/HomeScreen/provider/plan_controller.dart';
+import 'package:lottery_project/Notification/provider/notification_provider.dart';
+
+import 'package:lottery_project/Notification/views/notication_screen.dart';
+import 'package:lottery_project/PredictionSelection/views/prediction_screen.dart';
+import 'package:lottery_project/PredictionSelection/views/prize_list.dart';
+import 'package:lottery_project/PredictionSelection/widgets/prediction_widget.dart';
 import 'package:lottery_project/ResultScreen/views/lottery_result_screen.dart';
+import 'package:lottery_project/profile/views/profile_screen.dart';
+import 'package:lottery_project/upgradePlan/views/upgrade_plan.dart';
 import 'package:provider/provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
-    
       MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => PlanController()),
+        ChangeNotifierProvider(create: (_) => NotificationProviderr())
       ],
       child: const MyApp(),
     ),);
@@ -34,6 +42,7 @@ class MyApp extends StatelessWidget {
       designSize: const Size(390, 844),
       builder: (context, child) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           routes: {
             '/': (context) => WelcomeScreen(),
             '/signin': (context) => SigninScreen(),
@@ -45,6 +54,13 @@ class MyApp extends StatelessWidget {
             '/bottomNav':(context) => BottomNavigationBarScreen(),
             '/lotteryResult':(context) => LotteryResultScreen(),
             '/history':(context) => HistoryScreen(),
+            '/notification':(context) => NotificationsScreen (),
+            '/profile':(context) => ProfileScreen(),
+            '/upgradePlan':(context) => UpgradePlan(),
+            '/prizeCategory':(context) => PrizeListScreen(),
+            '/prediction':(context) => PredictionScreen(),
+            //'/predictionWidget':(context) => PredictionScreen(),
+
           },
           initialRoute: '/bottomNav',
         );

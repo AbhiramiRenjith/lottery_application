@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
@@ -23,17 +24,29 @@ class _LotteryDatePickerFieldState extends State<LotteryDatePickerField> {
       firstDate: DateTime(2020),
       lastDate: DateTime(2030),
       builder: (context, child) {
-        return Theme(
-          data: Theme.of(context).copyWith(
-            colorScheme: const ColorScheme.light(
-              primary: ColorConstants.blueColor,
-              onPrimary: ColorConstants.whiteColor,
-              onSurface: ColorConstants.blackColor,
-            ),
-          ),
-          child: child!,
-        );
-      },
+
+  final mediaQueryData = MediaQuery.of(context);
+  final scale = mediaQueryData.size.width / 390.w; 
+
+  return Theme(
+    data: Theme.of(context).copyWith(
+      colorScheme: const ColorScheme.light(
+        primary: ColorConstants.blueColor,
+        onPrimary: ColorConstants.whiteColor,
+        onSurface: ColorConstants.blackColor,
+      ),
+      textTheme: GoogleFonts.poppinsTextTheme(),
+    ),
+    child: MediaQuery(
+      data: mediaQueryData.copyWith(
+        textScaler: TextScaler.linear(scale.clamp(0.8, 1.2)),
+      ),
+      child: child!,
+    ),
+  );
+},
+
+
     );
 
     if (picked != null && picked != selectedDate) {
@@ -52,15 +65,19 @@ class _LotteryDatePickerFieldState extends State<LotteryDatePickerField> {
         boxShadow: [
           BoxShadow(
             color: ColorConstants.blueColor,
-            blurRadius: 10,
-            spreadRadius: 1,
+            blurRadius: 10.r,
+            spreadRadius: 1.r,
             offset: const Offset(2, 3),
           ),
         ],
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(15.r),
       ),
       child: TextFormField(
         controller:  widget.controller,
+        style: GoogleFonts.poppins(
+          fontWeight: FontWeight.w500,
+          fontSize: 18.sp
+        ),
         readOnly: true,
         onTap: () => _pickDate(context),
         decoration: InputDecoration(
@@ -72,9 +89,9 @@ class _LotteryDatePickerFieldState extends State<LotteryDatePickerField> {
               style: GoogleFonts.poppins(
                 fontWeight: FontWeight.w500,
                 color: selectedDate == null
-                    ? ColorConstants.hintColor
+                    ? ColorConstants.labelTextGreyColor
                     : Colors.black,
-                fontSize: 15,
+                fontSize: 15.sp,
               ),
             ),
           ),
@@ -86,6 +103,8 @@ class _LotteryDatePickerFieldState extends State<LotteryDatePickerField> {
             borderSide: BorderSide.none,
           ),
           prefixIcon: Container(
+              width: 38.sp,
+              height: 55.sp,
             decoration: const BoxDecoration(
               color: ColorConstants.blueColor,
               borderRadius: BorderRadius.only(
@@ -93,10 +112,10 @@ class _LotteryDatePickerFieldState extends State<LotteryDatePickerField> {
                 bottomLeft: Radius.circular(15),
               ),
             ),
-            child: const Icon(
+            child:  Icon(
               Icons.calendar_month_outlined,
               color: ColorConstants.whiteColor,
-              size: 30,
+              size: 30.sp,
             ),
           ),
           suffixIcon: const SizedBox.shrink(),

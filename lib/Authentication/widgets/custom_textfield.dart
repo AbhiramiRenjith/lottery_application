@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 
@@ -8,6 +9,7 @@ class CustomTextField extends StatelessWidget {
   final TextInputType keyboardType;
   final bool obscureText;
   final Widget? suffixIcon;
+  final String? Function(String?)? validator;
 
   const CustomTextField({
     super.key,
@@ -16,6 +18,7 @@ class CustomTextField extends StatelessWidget {
     this.keyboardType = TextInputType.text,
     this.obscureText = false,
     this.suffixIcon,
+    this.validator, 
   });
 
   @override
@@ -24,16 +27,16 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       keyboardType: keyboardType,
       obscureText: obscureText,
-
+      validator: validator, 
       style: GoogleFonts.poppins(
-        color: ColorConstants.labelColor,
-        fontSize:18 ,
+        color: ColorConstants.labelTextGreyColor,
+        fontSize: 18.sp,
         fontWeight: FontWeight.w400,
       ),
       decoration: InputDecoration(
         labelText: labelText,
         labelStyle: GoogleFonts.poppins(
-          fontSize: 25,
+          fontSize: 25.sp,
           color: ColorConstants.blackColor,
           fontWeight: FontWeight.w400,
         ),
@@ -46,3 +49,4 @@ class CustomTextField extends StatelessWidget {
     );
   }
 }
+
