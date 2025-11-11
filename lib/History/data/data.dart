@@ -1,8 +1,4 @@
 
-
-
-
-
 import 'package:lottery_project/constants/color_constants.dart';
 
 final List<Map<String, dynamic>> historyList = [

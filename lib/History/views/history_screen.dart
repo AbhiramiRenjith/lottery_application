@@ -16,7 +16,7 @@ class HistoryScreen extends StatelessWidget {
       length: 3,
       child: HomeGradientContainer(
         topContent: Padding(
-          padding:  EdgeInsets.symmetric(vertical: 60.h,horizontal: 20.w),
+          padding:  EdgeInsets.symmetric(vertical: 100.h,horizontal: 20.w),
           child: Row(
             children: [
             
@@ -25,7 +25,7 @@ class HistoryScreen extends StatelessWidget {
                 style: GoogleFonts.poppins(
                   color: ColorConstants.whiteColor,
                   fontWeight: FontWeight.w500,
-                  fontSize: 25.sp,
+                  fontSize: 30.sp,
                 ),
               ),
             ],

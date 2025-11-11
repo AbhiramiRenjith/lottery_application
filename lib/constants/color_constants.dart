@@ -33,6 +33,7 @@ class ColorConstants {
   static const dividerBlue = Color(0XFFC0E4FF);
   static const darkGreen = Color(0XFF2E7D32);
   static const yellow = Color(0XFFFCC21B);
+  static const darkYellow = Color(0XFFDF942A);
   static const tableBorder = Color(0XFFCCC9C9);
   static const containerBgGrey = Color(0XFFE9E9E9);
   static const containerBorderGreyColor = Color(0XFFE2E2E2);

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottery_project/PredictionSelection/widgets/plan_details_widget.dart';
 import 'package:lottery_project/PredictionSelection/widgets/prediction_widget.dart';
 import 'package:lottery_project/common_widgets/home_gradient_container.dart';
 import 'package:lottery_project/constants/color_constants.dart';
@@ -29,6 +30,7 @@ class PredictionScreen extends StatelessWidget {
                     icon: Icon(
                       Icons.arrow_back_ios,
                       color: ColorConstants.whiteColor,
+                    size: 25.sp,
                     ),
                   ),
                 ),
@@ -121,33 +123,29 @@ class PredictionScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 15.h),
-              Container(
-                padding: EdgeInsets.only(
-                  left: 4.w,
-                  right: 4.w,
-                  top: 4.h,
-                  bottom: 4.h,
-                ),
-                height: 35,
-          
+
+
+                       Container(
+                height: 38.h,
+                padding: EdgeInsets.only(left: 4.w,right: 4.w,top: 4.h,bottom: 4.h),
                 decoration: BoxDecoration(
                   color: ColorConstants.containerBgGrey,
-                  borderRadius: BorderRadius.circular(15.r),
+                  borderRadius: BorderRadius.circular(30.r),
                 ),
                 child: TabBar(
                   labelColor: ColorConstants.blackColor,
                   unselectedLabelColor: ColorConstants.blackColor,
                   labelStyle: GoogleFonts.poppins(
                     fontWeight: FontWeight.w500,
-                    fontSize: 12.sp,
+                    fontSize: 11.sp,
                   ),
-          
+                 
                   indicator: BoxDecoration(
                     color: ColorConstants.whiteColor,
                     borderRadius: BorderRadius.circular(30),
                   ),
                   dividerColor: ColorConstants.transparent,
-                  indicatorSize: TabBarIndicatorSize.tab,
+                indicatorSize: TabBarIndicatorSize.tab,
                   tabs: const [
                     Tab(text: "PLAN 1"),
                     Tab(text: "PLAN 2"),
@@ -155,15 +153,20 @@ class PredictionScreen extends StatelessWidget {
                   ],
                 ),
               ),
+   
               SizedBox(height: 10.h),
               SizedBox(
                 height: 800.h,
                 child: const TabBarView(
                   physics: BouncingScrollPhysics(),
                   children: [
-                    PredictionWidget(),
-                    PredictionWidget(),
-                    PredictionWidget(),
+                    // PredictionWidget(),
+                    // PredictionWidget(),
+                    // PredictionWidget(),
+                    PlanSelectionWidget(planIndex: 0,),
+                    PlanSelectionWidget(planIndex: 1,),
+                    PlanSelectionWidget(planIndex: 2,)
+
                   ],
                 ),
               ),

@@ -1,30 +1,36 @@
 
-    import 'package:lottery_project/constants/color_constants.dart';
+
+import 'package:flutter/material.dart';
+import 'package:lottery_project/constants/color_constants.dart';
 
 final List<Map<String, dynamic>> plans = [
       {
-        'title': 'Elite Plan',
-        'price': '₹599',
-        'currentPlan':true,
-         'color':ColorConstants.greenClr,
-         'description':'All-inclusive predictions and analytics',
+        'title': 'Basic Plan',
+        'subtitle':'Get started with basic predictions',
+        'price': '₹99',
+         'currentPlan':false,
+         'icon':Icons.auto_awesome,
+        'description':'Get started with basic predictions',
+        'color':ColorConstants.blueColor,
         'features': [
-          'Predict 1ts to 9th Prizes(All prizes Unlocked)',
-          '50 Numbers per Prediction',
-          'Advanced Ai pattern Analysis',
-          'Winning number frequency charts',
-          'Monthly performance report',
-          'Exclusive special draw tips',
-          'Higher success optimization tools enabled',
-          'Prioriry customer support'
+         '7th,8th & 9th Prizes Only',
+         '15 Numbers per Prediction',
+         'Prediction Percentage Display',
+         'Multi-Prize Analytics',
+         'Hot & Cold Number indicators',
+         'Basic History Analytics',
+         'Access to basic Support'
         ],
       },
+  
       {
         'title': 'Premium Plan',
+        'subtitle':'Advanced predictions with higher accuracy',
         'price': '₹299',
          'currentPlan':false,
+         'icon':Icons.diamond,
         'description':'Advanced predictions with higher accuracy',
-        'color':ColorConstants.yellow,
+        'color':ColorConstants.darkYellow,
         'features': [
           'Predict 4th to 9th Prizes',
           '30 Numbers per Prediction',
@@ -36,20 +42,25 @@ final List<Map<String, dynamic>> plans = [
 
         ],
       },
-      {
-        'title': 'Basic Plan',
-        'price': '₹99',
-         'currentPlan':false,
-        'description':'Get started with basic predictions',
-        'color':ColorConstants.homeGradientLightBlue,
+  
+          {
+        'title': 'Elite Plan',
+        'subtitle':'Advanced predictions with higher accuracy',
+        'price': '₹299',
+        'currentPlan':true,
+         'color':ColorConstants.darkGreen,
+         'description':'All-inclusive predictions and analytics',
+          'icon':Icons.workspace_premium,
         'features': [
-         '7th,8th & 9th Prizes Only',
-         '15 Numbers per Prediction',
-         'Prediction Percentage Display',
-         'Multi-Prize Analytics',
-         'Hot & Cold Number indicators',
-         'Basic History Analytics',
-         'Access to basic Support'
+          'Predict 1ts to 9th Prizes(All prizes Unlocked)',
+          '50 Numbers per Prediction',
+          'Advanced Ai pattern Analysis',
+          'Winning number frequency charts',
+          'Monthly performance report',
+          'Exclusive special draw tips',
+          'Higher success optimization tools enabled',
+          'Prioriry customer support',
+          
         ],
       },
     ];
@@ -57,15 +68,15 @@ final List<Map<String, dynamic>> plans = [
 
 List<Map<String,dynamic>> whyUpgrade = [
   {
-    'color':ColorConstants.homeGradientLightBlue,
+    'color':ColorConstants.blueColor,
     'text':'Get startd with basic predictions',
   },
     {
-    'color':ColorConstants.yellow,
+    'color':ColorConstants.darkYellow,
     'text':'Advanced predictions with higher accuracy',
   },
     {
-    'color':ColorConstants.greenClr,
+    'color':ColorConstants.darkGreen,
     'text':' Higher with Probability',
   },
 

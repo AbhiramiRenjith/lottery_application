@@ -22,9 +22,8 @@ class PredictionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       margin: EdgeInsets.only(bottom: 12.h),
-      padding: EdgeInsets.only(left: 10.w,right:10.w,top: 6.h ),
+      padding: EdgeInsets.only(left: 10.w, right: 10.w, top: 6.h),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: ColorConstants.whiteColor,
@@ -32,10 +31,10 @@ class PredictionCard extends StatelessWidget {
           BoxShadow(
             color: ColorConstants.lightGrey,
             offset: Offset(1, 1),
-            blurRadius: 4.r
-          )
+            blurRadius: 4.r,
+          ),
         ],
-        
+
         border: Border.all(color: ColorConstants.containerBorderGreyColor),
       ),
       child: Column(
@@ -44,35 +43,44 @@ class PredictionCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-                          Text(
-            lotteryName,
-            style: GoogleFonts.poppins(
-              fontWeight: FontWeight.w500,
-              fontSize: 18.sp,
-            ),
-          ),
-                             Column(
+              Text(
+                lotteryName,
+                style: GoogleFonts.poppins(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 18.sp,
+                ),
+              ),
+              Column(
                 children: [
-                  Text(status,
-                  style: GoogleFonts.poppins(
-                    color: status == "Pending"
-                      ? ColorConstants.yellow
-                      : ColorConstants.greenClr,fontWeight: FontWeight.w400,
-                      fontSize: 12.sp
-                  ),
+                  Text(
+                    status,
+                    style: GoogleFonts.poppins(
+                      color: status == "Pending"
+                          ? ColorConstants.yellow
+                          : ColorConstants.greenClr,
+                      fontWeight: FontWeight.w400,
+                      fontSize: 12.sp,
+                    ),
                   ),
                   SizedBox(height: 5.h),
-                  Container( 
+                  Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15.r),
-                      border: Border.all(color: ColorConstants.homeGradientLightBlue),
-                      
+                      border: Border.all(
+                        color: ColorConstants.homeGradientLightBlue,
+                      ),
                     ),
-                    child:Padding(
-                      padding:  EdgeInsets.symmetric(horizontal: 10.h),
-                      child: Text(plan,style: GoogleFonts.poppins(color: ColorConstants.blueColor,fontWeight: FontWeight.w400),),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.h),
+                      child: Text(
+                        plan,
+                        style: GoogleFonts.poppins(
+                          color: ColorConstants.blueColor,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ],
@@ -82,20 +90,22 @@ class PredictionCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Icon(Icons.calendar_month_outlined,color: ColorConstants.greyBlackColor,size: 18,),
+                  Icon(
+                    Icons.calendar_month_outlined,
+                    color: ColorConstants.greyBlackColor,
+                    size: 18,
+                  ),
                   SizedBox(width: 5.w),
-                  
-                    Text(
-                date,
-                style: GoogleFonts.poppins(
-                  fontSize: 15.sp,
-                  fontWeight: FontWeight.w400
-                  
-                ),
-              ),
+
+                  Text(
+                    date,
+                    style: GoogleFonts.poppins(
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
                 ],
               ),
-    
             ],
           ),
           SizedBox(height: 5.h),
@@ -104,74 +114,66 @@ class PredictionCard extends StatelessWidget {
             style: GoogleFonts.poppins(
               fontSize: 14.sp,
               color: ColorConstants.greyBlackColor,
-              fontWeight: FontWeight.w400
-
+              fontWeight: FontWeight.w400,
             ),
           ),
           SizedBox(height: 8.h),
 
-       Container(
-  padding: EdgeInsets.all(2.w),
-  decoration: BoxDecoration(
-    border: Border.all(color: ColorConstants.homeGradientLightBlue),
-    borderRadius: BorderRadius.circular(5),
-  ),
-  child: Center(
-    child: RichText(
-      text: TextSpan(
-        children: [
-          TextSpan(
-            text: ticketNo.substring(0, 2), 
-            style: GoogleFonts.poppins(
-              color: Colors.blue,
-              fontWeight: FontWeight.w400,
-              fontSize: 12,
+          Container(
+            padding: EdgeInsets.all(2.w),
+            decoration: BoxDecoration(
+              border: Border.all(color: ColorConstants.homeGradientLightBlue),
+              borderRadius: BorderRadius.circular(5),
+            ),
+            child: Center(
+              child: RichText(
+                text: TextSpan(
+                  children: [
+                    TextSpan(
+                      text: ticketNo.substring(0, 2),
+                      style: GoogleFonts.poppins(
+                        color: Colors.blue,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12,
+                      ),
+                    ),
+                    TextSpan(
+                      text: ticketNo.substring(2),
+                      style: GoogleFonts.poppins(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
-          TextSpan(
-            text: ticketNo.substring(2), 
-            style: GoogleFonts.poppins(
-              color: Colors.black,
-              fontWeight: FontWeight.w400,
-              fontSize: 12,
-            ),
-          ),
-        ],
-      ),
-    ),
-  ),
-),
 
           SizedBox(height: 10),
           Container(
             width: double.infinity,
             height: 2.h,
-            decoration: BoxDecoration(
-              color: ColorConstants.divider
-              
-            ),
+            decoration: BoxDecoration(color: ColorConstants.divider),
           ),
           SizedBox(height: 5.h),
-         
 
           Row(
             children: [
-              Icon(Icons.trending_up,color: ColorConstants.blueColor),
-                   Text(
-              "Result: $result",
-              style: GoogleFonts.poppins(
-                fontSize: 14.sp,
-                color: ColorConstants.greyBlackColor,
-                fontWeight: FontWeight.w400
+              Icon(Icons.trending_up, color: ColorConstants.blueColor,size: 14.sp),
+              SizedBox(width: 5.w),
+              Text(
+                "Result: $result",
+                style: GoogleFonts.poppins(
+                  fontSize: 14.sp,
+                  color: ColorConstants.greyBlackColor,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
-            ),
             ],
           ),
-          SizedBox(height: 10.h)
-
-
-
-
+          SizedBox(height: 10.h),
         ],
       ),
     );

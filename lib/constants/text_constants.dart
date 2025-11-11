@@ -61,6 +61,7 @@ class TextConstants {
   static const todayFeaturedprediction = 'TODAY’S FEATURED PREDICTION';
   static const priceNumber = '2834';
   static const yourActivePlan = 'YOUR ACTIVE PLAN : PLAN 2';
+
   static const free = 'free';
   static const upgrade = 'upgrade';
   static const basic = 'basic';
@@ -108,6 +109,8 @@ class TextConstants {
   static const aIanalyzedrecentdraw = "AI analyzed recent draw patterns and generated these predictions.";
   static const predict = "Predict";
   static const aIpoweredPredictions = 'AI-powered Predictions';
+  static const predictions = 'Predictions';
+  static const predictionsperMonths = '10 Predictions per Months';
 
 
 }
