@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
 
@@ -65,16 +64,16 @@ class DonthaveaccountTextWidget extends StatelessWidget {
             Text(
               TextConstants.donthaveAccount,
               style: GoogleFonts.poppins(
-                fontSize: 15.sp,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w500,
-                color: ColorConstants.greyColor,
+                color: ColorConstants.greyText,
               ),
             ),
             SizedBox(width: 5.w),
             TextButton(
               style: TextButton.styleFrom(
                 padding: EdgeInsets.zero,
-                minimumSize:  Size(0.w, 0.h),
+                minimumSize: Size(0.w, 0.h),
               ),
               onPressed: () {
                 Navigator.pushNamed(context, '/create_account');

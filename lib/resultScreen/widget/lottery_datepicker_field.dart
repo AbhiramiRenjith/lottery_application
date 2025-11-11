@@ -1,14 +1,17 @@
 
 
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottery_project/ResultScreen/provider/lottery_result_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
 
+
 class LotteryDatePickerField extends StatefulWidget {
-  final TextEditingController controller;
-  const LotteryDatePickerField({super.key, required this.controller});
+  const LotteryDatePickerField({super.key});
 
   @override
   State<LotteryDatePickerField> createState() => _LotteryDatePickerFieldState();
@@ -17,49 +20,39 @@ class LotteryDatePickerField extends StatefulWidget {
 class _LotteryDatePickerFieldState extends State<LotteryDatePickerField> {
   DateTime? selectedDate;
 
-  Future<void> _pickDate(BuildContext context) async {
+  Future<void> _pickDate(BuildContext context, LotteryResultController controller) async {
     final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: selectedDate ?? DateTime.now(),
       firstDate: DateTime(2020),
       lastDate: DateTime(2030),
       builder: (context, child) {
-
-  final mediaQueryData = MediaQuery.of(context);
-  final scale = mediaQueryData.size.width / 390.w; 
-
-  return Theme(
-    data: Theme.of(context).copyWith(
-      colorScheme: const ColorScheme.light(
-        primary: ColorConstants.blueColor,
-        onPrimary: ColorConstants.whiteColor,
-        onSurface: ColorConstants.blackColor,
-      ),
-      textTheme: GoogleFonts.poppinsTextTheme(),
-    ),
-    child: MediaQuery(
-      data: mediaQueryData.copyWith(
-        textScaler: TextScaler.linear(scale.clamp(0.8, 1.2)),
-      ),
-      child: child!,
-    ),
-  );
-},
-
-
+        return Theme(
+          data: Theme.of(context).copyWith(
+            colorScheme: const ColorScheme.light(
+              primary: ColorConstants.blueColor,
+              onPrimary: ColorConstants.whiteColor,
+              onSurface: ColorConstants.blackColor,
+            ),
+            textTheme: GoogleFonts.poppinsTextTheme(),
+          ),
+          child: child!,
+        );
+      },
     );
 
     if (picked != null && picked != selectedDate) {
       setState(() {
         selectedDate = picked;
-        widget.controller.text =
-            "${picked.day}/${picked.month}/${picked.year}";
+        controller.setDate("${picked.day}/${picked.month}/${picked.year}");
       });
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final controller = Provider.of<LotteryResultController>(context);
+
     return Container(
       decoration: BoxDecoration(
         boxShadow: [
@@ -73,28 +66,20 @@ class _LotteryDatePickerFieldState extends State<LotteryDatePickerField> {
         borderRadius: BorderRadius.circular(15.r),
       ),
       child: TextFormField(
-        controller:  widget.controller,
+        controller: controller.dateController,
         style: GoogleFonts.poppins(
           fontWeight: FontWeight.w500,
-          fontSize: 18.sp
+          fontSize: 18.sp,
         ),
         readOnly: true,
-        onTap: () => _pickDate(context),
+        onTap: () => _pickDate(context, controller),
         decoration: InputDecoration(
-          hint: Center(
-            child: Text(
-              selectedDate == null
-                  ? TextConstants.selectDate
-                  : "${selectedDate!.day}/${selectedDate!.month}/${selectedDate!.year}",
-              style: GoogleFonts.poppins(
-                fontWeight: FontWeight.w500,
-                color: selectedDate == null
-                    ? ColorConstants.labelTextGreyColor
-                    : Colors.black,
-                fontSize: 15.sp,
-              ),
-            ),
-          ),
+          hint: Center(child: Text(TextConstants.selectDate, style: GoogleFonts.poppins(
+                    fontWeight: FontWeight.w500,
+                    color: controller.dateController.text.isEmpty
+                        ? ColorConstants.labelTextGreyColor
+                        : ColorConstants.blackColor,
+                    fontSize: 15.sp))),
           filled: true,
           fillColor: ColorConstants.whiteColor,
           contentPadding: const EdgeInsets.symmetric(vertical: 0),
@@ -103,8 +88,8 @@ class _LotteryDatePickerFieldState extends State<LotteryDatePickerField> {
             borderSide: BorderSide.none,
           ),
           prefixIcon: Container(
-              width: 38.sp,
-              height: 55.sp,
+            width: 38.sp,
+            height: 55.sp,
             decoration: const BoxDecoration(
               color: ColorConstants.blueColor,
               borderRadius: BorderRadius.only(
@@ -112,7 +97,7 @@ class _LotteryDatePickerFieldState extends State<LotteryDatePickerField> {
                 bottomLeft: Radius.circular(15),
               ),
             ),
-            child:  Icon(
+            child: Icon(
               Icons.calendar_month_outlined,
               color: ColorConstants.whiteColor,
               size: 30.sp,

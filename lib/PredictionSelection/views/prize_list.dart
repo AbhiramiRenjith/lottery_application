@@ -20,7 +20,7 @@ class PrizeListScreen extends StatelessWidget {
           Row(
             children: [
               Padding(
-                padding:  EdgeInsets.only(left: 10.w,top: 25.h),
+                padding: EdgeInsets.only(left: 10.w, top: 40.h),
                 child: IconButton(
                   onPressed: () {
                     Navigator.pop(context);
@@ -44,14 +44,14 @@ class PrizeListScreen extends StatelessWidget {
               //     ColorConstants.homeGradientDarkBlue,
               //   ],
               // ),
-             // borderRadius: BorderRadius.circular(8.r),
-             shape: BoxShape.circle,
-             // border: Border.all(color: ColorConstants.whiteColor),
+              // borderRadius: BorderRadius.circular(8.r),
+              shape: BoxShape.circle,
+              // border: Border.all(color: ColorConstants.whiteColor),
             ),
             child: Padding(
               padding: EdgeInsets.all(15.w),
-           //  child: Image.asset('images/bhagyathara.png',),
-            child: Image.asset(lotteryImage as String, fit: BoxFit.contain),
+              //  child: Image.asset('images/bhagyathara.png',),
+              child: Image.asset(lotteryImage as String, fit: BoxFit.contain),
             ),
           ),
           SizedBox(height: 15.h),
@@ -77,41 +77,31 @@ class PrizeListScreen extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding:  EdgeInsets.only(top: 10.h,left: 10.w),
-            child: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-               borderRadius: BorderRadius.circular(1.r),
-                color: ColorConstants.blue,
-              ),
-              child: 
-            Padding(
-              padding:  EdgeInsets.only(left: 3.w),
-              child: Container(
-                    decoration: BoxDecoration(color: ColorConstants.whiteColor),
-                    child: Row(
-                      children: [
-                        SizedBox(width: 5.w),
-                           Text(               
+            padding: EdgeInsets.only(top: 20.h, left: 10.w),
+            child: IntrinsicHeight(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(width: 2.w, color: ColorConstants.blue),
+                  SizedBox(width: 5.w),
+                  Text(
                     TextConstants.availableCategory,
                     style: GoogleFonts.poppins(
                       fontWeight: FontWeight.w500,
-                      fontSize: 18.sp,
+                      fontSize: 17.sp,
                       color: ColorConstants.blackColor,
                     ),
                   ),
-                      ],
-                    )
-                  ),
-            ),
+                ],
               ),
             ),
-            SizedBox(height: 25.h),
-           Padding(
-             padding:  EdgeInsets.only(left: 15.w),
-             child: AvailablePrizes(lotteryImage:lotteryImage),
-           )
-      ],
+          ),
+      
+          Padding(
+            padding: EdgeInsets.only(left: 15.w,top: 20.h),
+            child: AvailablePrizes(lotteryImage: lotteryImage),
+          ),
+        ],
       ),
     );
   }

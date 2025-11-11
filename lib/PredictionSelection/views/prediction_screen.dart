@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottery_project/PredictionSelection/widgets/prediction_widget.dart';
 import 'package:lottery_project/common_widgets/home_gradient_container.dart';
 import 'package:lottery_project/constants/color_constants.dart';
+import 'package:lottery_project/constants/text_constants.dart';
 
 
 class PredictionScreen extends StatelessWidget {
@@ -20,7 +21,7 @@ class PredictionScreen extends StatelessWidget {
             Row(
               children: [
                 Padding(
-                  padding:  EdgeInsets.only(left: 10,top: 25),
+                  padding:  EdgeInsets.only(left: 10.w,top: 40.h),
                   child: IconButton(
                     onPressed: () {
                       Navigator.pop(context);
@@ -79,10 +80,10 @@ class PredictionScreen extends StatelessWidget {
           ],
         ),
         child: Padding(
-          padding: const EdgeInsets.only(left: 10,right: 10,top: 10),
+          padding:  EdgeInsets.only(left: 10.w,right: 10.w,top: 25.h),
           child: Column(
             children: [
-             // SizedBox(height: 20.h),
+             
               Container(
                 decoration: BoxDecoration(color: ColorConstants.whiteColor),
                 child: Row(
@@ -110,7 +111,7 @@ class PredictionScreen extends StatelessWidget {
                     SizedBox(width: 5.w),
           
                     Text(
-                      ' AI POWERED PREDICITIONS',
+                      TextConstants.aIpoweredPredictions,
                       style: GoogleFonts.poppins(
                         fontWeight: FontWeight.w500,
                         fontSize: 18.sp,
@@ -156,7 +157,7 @@ class PredictionScreen extends StatelessWidget {
               ),
               SizedBox(height: 10.h),
               SizedBox(
-                height: 500.h,
+                height: 800.h,
                 child: const TabBarView(
                   physics: BouncingScrollPhysics(),
                   children: [

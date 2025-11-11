@@ -16,7 +16,7 @@ class HistoryScreen extends StatelessWidget {
       length: 3,
       child: HomeGradientContainer(
         topContent: Padding(
-          padding:  EdgeInsets.symmetric(vertical: 35.h,horizontal: 10.w),
+          padding:  EdgeInsets.symmetric(vertical: 60.h,horizontal: 20.w),
           child: Row(
             children: [
             
@@ -31,22 +31,23 @@ class HistoryScreen extends StatelessWidget {
             ],
           ),
         ),
-        child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 10.w),
+       
           child: Column(
             children: [
+              SizedBox(height: 25.h),
               Container(
+                height: 38.h,
                 padding: EdgeInsets.only(left: 4.w,right: 4.w,top: 4.h,bottom: 4.h),
                 decoration: BoxDecoration(
                   color: ColorConstants.containerBgGrey,
-                  borderRadius: BorderRadius.circular(15.r),
+                  borderRadius: BorderRadius.circular(30.r),
                 ),
                 child: TabBar(
                   labelColor: ColorConstants.blackColor,
                   unselectedLabelColor: ColorConstants.blackColor,
                   labelStyle: GoogleFonts.poppins(
                     fontWeight: FontWeight.w500,
-                    fontSize: 10.sp,
+                    fontSize: 11.sp,
                   ),
                  
                   indicator: BoxDecoration(
@@ -54,7 +55,7 @@ class HistoryScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(30),
                   ),
                   dividerColor: ColorConstants.transparent,
-                  indicatorSize: TabBarIndicatorSize.tab,
+                indicatorSize: TabBarIndicatorSize.tab,
                   tabs: const [
                     Tab(text: "All"),
                     Tab(text: "Completed"),
@@ -80,8 +81,8 @@ class HistoryScreen extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      );
+    
   }
 }
 

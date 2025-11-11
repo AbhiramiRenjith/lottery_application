@@ -24,7 +24,7 @@ class PredictionCard extends StatelessWidget {
     return Container(
       
       margin: EdgeInsets.only(bottom: 12.h),
-      padding: EdgeInsets.only(left: 15,right:15,top: 6 ),
+      padding: EdgeInsets.only(left: 10.w,right:10.w,top: 6.h ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: ColorConstants.whiteColor,
@@ -32,7 +32,7 @@ class PredictionCard extends StatelessWidget {
           BoxShadow(
             color: ColorConstants.lightGrey,
             offset: Offset(1, 1),
-            blurRadius: 4
+            blurRadius: 4.r
           )
         ],
         
@@ -48,7 +48,7 @@ class PredictionCard extends StatelessWidget {
             lotteryName,
             style: GoogleFonts.poppins(
               fontWeight: FontWeight.w500,
-              fontSize: 18,
+              fontSize: 18.sp,
             ),
           ),
                              Column(
@@ -58,18 +58,18 @@ class PredictionCard extends StatelessWidget {
                     color: status == "Pending"
                       ? ColorConstants.yellow
                       : ColorConstants.greenClr,fontWeight: FontWeight.w400,
-                      fontSize: 12
+                      fontSize: 12.sp
                   ),
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: 5.h),
                   Container( 
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
+                      borderRadius: BorderRadius.circular(15.r),
                       border: Border.all(color: ColorConstants.homeGradientLightBlue),
                       
                     ),
                     child:Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      padding:  EdgeInsets.symmetric(horizontal: 10.h),
                       child: Text(plan,style: GoogleFonts.poppins(color: ColorConstants.blueColor,fontWeight: FontWeight.w400),),
                     ),
                   )
@@ -83,12 +83,12 @@ class PredictionCard extends StatelessWidget {
               Row(
                 children: [
                   Icon(Icons.calendar_month_outlined,color: ColorConstants.greyBlackColor,size: 18,),
-                  SizedBox(width: 5),
+                  SizedBox(width: 5.w),
                   
                     Text(
                 date,
                 style: GoogleFonts.poppins(
-                  fontSize: 15,
+                  fontSize: 15.sp,
                   fontWeight: FontWeight.w400
                   
                 ),
@@ -102,7 +102,7 @@ class PredictionCard extends StatelessWidget {
           Text(
             prize,
             style: GoogleFonts.poppins(
-              fontSize: 14,
+              fontSize: 14.sp,
               color: ColorConstants.greyBlackColor,
               fontWeight: FontWeight.w400
 
@@ -111,7 +111,7 @@ class PredictionCard extends StatelessWidget {
           SizedBox(height: 8.h),
 
        Container(
-  padding: EdgeInsets.all(2),
+  padding: EdgeInsets.all(2.w),
   decoration: BoxDecoration(
     border: Border.all(color: ColorConstants.homeGradientLightBlue),
     borderRadius: BorderRadius.circular(5),
@@ -145,13 +145,13 @@ class PredictionCard extends StatelessWidget {
           SizedBox(height: 10),
           Container(
             width: double.infinity,
-            height: 2,
+            height: 2.h,
             decoration: BoxDecoration(
               color: ColorConstants.divider
               
             ),
           ),
-          SizedBox(height: 5),
+          SizedBox(height: 5.h),
          
 
           Row(
@@ -160,14 +160,14 @@ class PredictionCard extends StatelessWidget {
                    Text(
               "Result: $result",
               style: GoogleFonts.poppins(
-                fontSize: 14,
+                fontSize: 14.sp,
                 color: ColorConstants.greyBlackColor,
                 fontWeight: FontWeight.w400
               ),
             ),
             ],
           ),
-          SizedBox(height: 10)
+          SizedBox(height: 10.h)
 
 
 

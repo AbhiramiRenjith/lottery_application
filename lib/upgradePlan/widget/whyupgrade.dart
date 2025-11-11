@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
-import 'package:lottery_project/dummyData/dummy_data.dart';
+import 'package:lottery_project/upgradePlan/data/data.dart';
 
 class WhyUpgradeSection extends StatelessWidget {
   const WhyUpgradeSection({super.key});

@@ -2,10 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottery_project/upgradePlan/data/data.dart';
 import 'package:stacked_cards_carousel/stacked_cards_carousel.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
-import 'package:lottery_project/dummyData/dummy_data.dart';
+
 
 class SubscriptionSlider extends StatefulWidget {
   const SubscriptionSlider({super.key});

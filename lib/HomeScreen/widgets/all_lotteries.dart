@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottery_project/HomeScreen/provider/all_lottery_provider.dart';
 import 'package:lottery_project/PredictionSelection/views/prize_list.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
-import 'package:lottery_project/dummyData/dummy_data.dart';
+import 'package:provider/provider.dart';
 
 class AllLotteries extends StatelessWidget {
   const AllLotteries({super.key});
@@ -12,6 +13,7 @@ class AllLotteries extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final lotteryController = Provider.of<AllLotteryProvider>(context);
     return 
        Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,6 +46,7 @@ class AllLotteries extends StatelessWidget {
               ),
             ],
           ),
+          SizedBox(height: 20.h),
           GridView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -52,9 +55,9 @@ class AllLotteries extends StatelessWidget {
               mainAxisSpacing: 20.h,
                   childAspectRatio: 1
             ),
-            itemCount: allLotteries.length,
+            itemCount: lotteryController.allLotteries.length,
             itemBuilder: (context, index) {
-              final lottery = allLotteries[index];
+               final lottery = lotteryController.allLotteries[index];
               return Padding(
                 padding:  EdgeInsets.symmetric(horizontal: 20.w),
                 child: GestureDetector(

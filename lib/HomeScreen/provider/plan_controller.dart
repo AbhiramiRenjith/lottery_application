@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 class PlanController extends ChangeNotifier {
-  final bool _isFree = false;
-final String _activePlan = "high";
+  final bool _isFree = true;
+  final String _activePlan = "high";
   
   //String? _activePlan;
 

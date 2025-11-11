@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottery_project/HomeScreen/handler/planhandler.dart';
+import 'package:lottery_project/HomeScreen/provider/carosel_provider.dart';
 import 'package:lottery_project/HomeScreen/provider/plan_controller.dart';
 import 'package:lottery_project/HomeScreen/widgets/all_lotteries.dart';
 import 'package:lottery_project/HomeScreen/widgets/winner_details_widget.dart';
@@ -19,18 +20,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final List<String> imageList = [
-    'images/bannerone.png',
-    'images/bannerone.png',
-    'images/bannerone.png',
-    'images/bannerone.png',
-    'images/bannerone.png',
-  ];
-  int currentIndex = 0;
-
 
   bool hasNotification = true;
-
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -49,6 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     final planWidget = PlanWidgetHandler.getPlanWidget(planToShow);
+    final carouselController = Provider.of<CarouselControllerProvider>(context);
 
     return HomeGradientContainer(
       topContent: Column(
@@ -92,7 +84,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   child: InkWell(
                     borderRadius: BorderRadius.circular(buttonSize / 2),
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushNamed(context, '/notification');
+                    },
                     child: SizedBox(
                       width: buttonSize,
                       height: buttonSize,
@@ -137,14 +131,14 @@ class _HomeScreenState extends State<HomeScreen> {
       child: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 5.h),
+          padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
           child: Column(
             children: [
               SizedBox(
                 height: 180.h,
                 width: double.infinity,
                 child: CarouselSlider(
-                  items: imageList.map((imagePath) {
+                  items: carouselController.imageList.map((imagePath) {
                     return ClipRRect(
                       borderRadius: BorderRadius.circular(16.r),
                       child: Image.asset(
@@ -162,7 +156,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     autoPlayInterval: const Duration(seconds: 3),
                     onPageChanged: (index, reason) {
                       setState(() {
-                        currentIndex = index;
+                        carouselController.setCurrentIndex(index);
                       });
                     },
                   ),
@@ -209,7 +203,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w600,
                             color: ColorConstants.blueColor,
-                            fontSize: 16.sp,
+                            fontSize: 17.sp,
                           ),
                         ),
                         Text(
@@ -228,15 +222,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: List.generate(imageList.length, (index) {
-                      bool isActive = index == currentIndex;
+                    children: List.generate(carouselController.imageList.length, (index) {
+                    bool isActive = index == carouselController.currentIndex;
 
                       return AnimatedContainer(
                         duration: const Duration(milliseconds: 300),
                         curve: Curves.easeInOut,
                         margin: EdgeInsets.symmetric(horizontal: 2.w),
-                        width: isActive ? 14.w : 4.w,
-                        height: 4.w,
+                        width: isActive ? 15.w : 6.w,
+                        height: 6.w,
 
                         decoration: BoxDecoration(
                           color: isActive
@@ -251,9 +245,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-
               SizedBox(height: 15.h),
-
               WinnerDetailsWidget(),
               SizedBox(height: 20.h),
               AllLotteries(),

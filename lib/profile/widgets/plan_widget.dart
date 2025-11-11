@@ -10,102 +10,103 @@ class PlanWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-      Container(
-        // height: 89.h,
-        decoration: BoxDecoration(
-          color: ColorConstants.whiteColor,
-          borderRadius: BorderRadius.circular(10.r),
-          boxShadow: [
-            BoxShadow(
-              color: ColorConstants.greyBlackColor,
-              blurRadius: 5
+    return Container(
+      decoration: BoxDecoration(
+        color: ColorConstants.whiteColor,
+        borderRadius: BorderRadius.circular(10.r),
+        boxShadow: [
+          BoxShadow(color: ColorConstants.greyBlackColor, blurRadius: 5.r),
+        ],
+      ),
 
-            )
-          ]
-        ),
+      child: Padding(
+        padding: const EdgeInsets.all(15),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
 
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Image.asset(
-                        'images/upgrade.png',
-                        width: 20.w,
-                        height: 20,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Image.asset(
+                      'images/upgrade.png',
+                      width: 20.sp,
+                      height: 20.sp,
+                    ),
+                    SizedBox(width: 5.w),
+                    Text(
+                      TextConstants.currentPlan,
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w400,
+                        color: ColorConstants.blackColor,
+                        fontSize: 16.sp,
                       ),
-                      SizedBox(width: 5),
-                      Text(
-                        TextConstants.currentPlan,
+                    ),
+                  ],
+                ),
+
+                Container(
+                  width: 52.w,
+                  height: 32.h,
+                  decoration: BoxDecoration(
+                    color: ColorConstants.lightGreen,
+                    borderRadius: BorderRadius.circular(10.r),
+                  ),
+                  child: Center(
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        TextConstants.active,
                         style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w400,
+                          fontWeight: FontWeight.w500,
                           color: ColorConstants.blackColor,
+                          fontSize: 12.sp,
                         ),
                       ),
-                    ],
-                  ),
-                  Container(
-                    width: 55.w,
-                    height: 15.h,
-                    decoration: BoxDecoration(
-                      color: ColorConstants.lightGreen,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-
-                    child: Text(
-                      TextConstants.active,
-                      textAlign: TextAlign.center,
-                      style: GoogleFonts.poppins(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 11.sp,
-                        color: ColorConstants.black,
-                      ),
                     ),
                   ),
-                ],
+                ),
+              ],
+            ),
+            SizedBox(height: 5.h),
+            Text(
+              TextConstants.planOne,
+              style: GoogleFonts.poppins(
+                color: ColorConstants.greenClr,
+                fontSize: 16.sp,
               ),
-              SizedBox(height: 5.h),
-              Text(
-                TextConstants.planOne,
-                style: GoogleFonts.poppins(color: ColorConstants.greenClr),
-              ),
+            ),
 
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/upgradePlan');
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: ColorConstants.transparent,
-                  shadowColor: ColorConstants.transparent,
-                  side: BorderSide(
-                    color: ColorConstants.homeGradientLightBlue,
-                    width: 1.w,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadiusGeometry.circular(5),
-                  ),
-                  minimumSize: Size(double.infinity, 25.h),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/upgradePlan');
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: ColorConstants.transparent,
+                shadowColor: ColorConstants.transparent,
+                side: BorderSide(
+                  color: ColorConstants.homeGradientLightBlue,
+                  width: 1.w,
                 ),
-                child: Text(
-                  TextConstants.upgradePlan,
-                  style: GoogleFonts.poppins(
-                    color: ColorConstants.blue,
-                    fontSize: 14.sp,
-                    fontWeight: FontWeight.w500,
-                  ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadiusGeometry.circular(5),
+                ),
+                minimumSize: Size(double.infinity, 30.h),
+              ),
+              child: Text(
+                TextConstants.upgradePlan,
+                style: GoogleFonts.poppins(
+                  color: ColorConstants.blue,
+                  fontSize: 14.sp,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-      );
-    
+      ),
+    );
   }
 }

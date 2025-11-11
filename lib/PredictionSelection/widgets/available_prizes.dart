@@ -2,8 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottery_project/PredictionSelection/provider/avilableprize_controller.dart';
 import 'package:lottery_project/constants/color_constants.dart';
-import 'package:lottery_project/dummyData/dummy_data.dart';
+import 'package:lottery_project/constants/text_constants.dart';
+import 'package:provider/provider.dart';
 
 class AvailablePrizes extends StatelessWidget {
   final String? lotteryImage;
@@ -11,12 +13,14 @@ class AvailablePrizes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        final controller = Provider.of<AvailablePrizesController>(context);
     return ListView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: prizeCategory.length,
+      itemCount: controller.prizeCategory.length,
       itemBuilder: (context, index) {
-        final prize = prizeCategory[index];
+        final prize = controller.prizeCategory[index];
+         
         return Padding(
           padding: EdgeInsets.only(bottom: 15.h,right: 15.w),
           child: Container(
@@ -72,7 +76,7 @@ class AvailablePrizes extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            prize['prize'],
+                            prize['prize'] ?? '',
                             style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w500,
                               fontSize: 16.sp,
@@ -80,7 +84,7 @@ class AvailablePrizes extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            prize['amount'],
+                            prize['amount'] ?? '',
                             style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w500,
                               fontSize: 15.sp,
@@ -88,7 +92,7 @@ class AvailablePrizes extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            prize['date'],
+                            prize['date'] ?? '',
                             style: GoogleFonts.poppins(
                               fontWeight: FontWeight.w500,
                               fontSize: 11.sp,
@@ -109,16 +113,17 @@ class AvailablePrizes extends StatelessWidget {
                             ),
                           ),
                           minimumSize:
-                              WidgetStateProperty.all(const Size(30, 30)),
+                              WidgetStateProperty.all( Size(30.w, 30.h)),
                         ),
                         onPressed: () {
                           Navigator.pushNamed(context, '/prediction');
                         },
                         child: Text(
-                          'PREDICT',
+                          TextConstants.predict,
                           style: GoogleFonts.poppins(
                             color: ColorConstants.whiteColor,
                             fontWeight: FontWeight.w500,
+                            fontSize: 14.sp
                          
                           ),
                         ),

@@ -28,6 +28,7 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
         key: _formKey,
         child: Column(
           children: [
+            SizedBox(height: 30),
             CustomTextField(
               controller: _newPassController,
               labelText: TextConstants.newPass,
@@ -47,14 +48,14 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                   size: 16.sp,
                 ),
               ),
-              validator: (value){
-                     if (value == null || value.isEmpty) {
-                    return 'Please enter password';
-                  }else if(_newPassController.text.trim() != _conformPassController.text.trim()){
-      return 'Passwords do not match';
-    }
-                  return null;
-
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter password';
+                } else if (_newPassController.text.trim() !=
+                    _conformPassController.text.trim()) {
+                  return 'Passwords do not match';
+                }
+                return null;
               },
             ),
             SizedBox(height: 50.h),
@@ -76,13 +77,14 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                   size: 16.sp,
                 ),
               ),
-              validator: (value){
-                        if (value == null || value.isEmpty) {
-                    return 'Please enter password';
-                  }else if(_newPassController.text.trim() != _conformPassController.text.trim()){
-      return 'Passwords do not match';
-    }
-                  return null;
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter password';
+                } else if (_newPassController.text.trim() !=
+                    _conformPassController.text.trim()) {
+                  return 'Passwords do not match';
+                }
+                return null;
               },
             ),
             SizedBox(height: 100.h),
@@ -90,7 +92,6 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
               text: TextConstants.resetpass,
               onPressed: () {
                 validation();
-              
               },
             ),
           ],
@@ -98,11 +99,10 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
       ),
     );
   }
-  void validation(){
-    if(_formKey.currentState!.validate()){
-        Navigator.pushNamed(context, '/verify_success');
-      
+
+  void validation() {
+    if (_formKey.currentState!.validate()) {
+      Navigator.pushNamed(context, '/signin');
     }
-    
   }
 }

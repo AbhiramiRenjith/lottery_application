@@ -42,7 +42,7 @@ class CustomTextField extends StatelessWidget {
         ),
         floatingLabelBehavior: FloatingLabelBehavior.always,
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorConstants.tfborderGreyColor),
+          borderSide: BorderSide(color: ColorConstants.textfieldborderGreyColor),
         ),
         suffixIcon: suffixIcon,
       ),

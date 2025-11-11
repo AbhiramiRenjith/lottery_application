@@ -7,12 +7,13 @@ import 'package:lottery_project/Authentication/widgets/custom_textfield.dart';
 import 'package:lottery_project/common_widgets/dont_have_account_text_widget.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
+
 class SigninScreen extends StatelessWidget {
   SigninScreen({super.key});
   final _formKey = GlobalKey<FormState>();
   final _phoneNumberController = TextEditingController();
   final _passwordControllet = TextEditingController();
- final ValueNotifier<bool> isCheck = ValueNotifier(false);
+  final ValueNotifier<bool> isCheck = ValueNotifier(false);
   @override
   Widget build(BuildContext context) {
     return BackgroundContainerWidget(
@@ -56,7 +57,7 @@ class SigninScreen extends StatelessWidget {
                         valueListenable: isCheck,
                         builder: (context, value, _) {
                           return Transform.scale(
-                            scale: 1.sp,
+                            scale: 0.8.sp,
                             child: Checkbox(
                               value: value,
                               onChanged: (newValue) {
@@ -69,12 +70,13 @@ class SigninScreen extends StatelessWidget {
                           );
                         },
                       ),
-                      SizedBox(width: 3.w),
+
                       Text(
                         TextConstants.remenberMe,
                         style: GoogleFonts.poppins(
                           fontSize: 13.sp,
                           fontWeight: FontWeight.w500,
+                          color: ColorConstants.blkColor,
                         ),
                       ),
                     ],
@@ -86,10 +88,12 @@ class SigninScreen extends StatelessWidget {
                     },
                     child: Text(
                       TextConstants.forgetPassword,
+                      overflow: TextOverflow.ellipsis,
                       style: GoogleFonts.poppins(
                         color: ColorConstants.blackColor,
+
                         fontWeight: FontWeight.w400,
-                        fontSize: 14.sp,
+                        fontSize: 13.sp,
                       ),
                     ),
                   ),
@@ -112,7 +116,7 @@ class SigninScreen extends StatelessWidget {
   }
 
   void validation(BuildContext context) {
-    if (_formKey.currentState!.validate()) {    
+    if (_formKey.currentState!.validate()) {
       Navigator.pushNamed(context, '/bottomNav');
     }
   }

@@ -15,18 +15,22 @@ class ForgetPassword extends StatelessWidget {
     return BackgroundContainerWidget(
       title: TextConstants.titleForgetPass,
       child: Form(
-        key:_formKey ,
+        key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CustomTextField(labelText: TextConstants.phoneNumber,keyboardType: TextInputType.phone,
-            controller: _phoneNumberController,validator: (value){
+            SizedBox(height: 20.h),
+            CustomTextField(
+              labelText: TextConstants.phoneNumber,
+              keyboardType: TextInputType.phone,
+              controller: _phoneNumberController,
+              validator: (value) {
                 if (value == null || value.isEmpty) {
-                    return 'Please enter your phone number';
-                  }
-                  return null;
-              
-            },),
+                  return 'Please enter your phone number';
+                }
+                return null;
+              },
+            ),
             SizedBox(height: 40.h),
             CustomButton(
               text: TextConstants.sendCode,
@@ -41,9 +45,9 @@ class ForgetPassword extends StatelessWidget {
       ),
     );
   }
-    void validation(BuildContext context) {
+
+  void validation(BuildContext context) {
     if (_formKey.currentState!.validate()) {
-     
       Navigator.pushNamed(context, '/verify_account');
     }
   }

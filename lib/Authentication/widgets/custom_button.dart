@@ -40,16 +40,14 @@ class CustomButton extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30.r),
             ),
-            minimumSize: Size(309.w, 57.h)
-           
-        
+            minimumSize: Size(309.w, 47.h)
           ),
           child: Text(
             text,
             textAlign: TextAlign.center,
             style: GoogleFonts.poppins(
               color: ColorConstants.whiteColor,
-              fontSize: 18.sp,
+              fontSize: 22.sp,
               fontWeight: FontWeight.w600,
             ),
           ),

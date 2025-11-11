@@ -78,6 +78,7 @@ class UpgradePlan extends StatelessWidget {
                     fontSize: 25.sp,
                   ),
                 ),
+                SizedBox(height: 20.h)
               ],
             ),
           ),
@@ -112,14 +113,7 @@ class UpgradePlan extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 20.h),
-                    
-                  
-
                      SubscriptionSlider(),
-                   
-                    
-                    SizedBox(height: 20.h),
-
                     WhyUpgradeSection(),
 
                     SizedBox(height: 50.h),

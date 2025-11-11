@@ -1,18 +1,19 @@
 
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
-import 'package:lottery_project/dummyData/dummy_data.dart';
+import 'package:lottery_project/profile/provider/profile_controller.dart';
+import 'package:provider/provider.dart';
 
 class ProfileDetailsBox extends StatelessWidget {
   const ProfileDetailsBox({super.key});
 
   @override
   Widget build(BuildContext context) {
+   final controller = Provider.of<ProfileController>(context);
+    final profileDetails = controller.profileDetails;
     return Container(
    
       decoration: BoxDecoration(
@@ -25,11 +26,11 @@ class ProfileDetailsBox extends StatelessWidget {
       ),
       child: Column(
         children: [
-          _buildDetailRow(Icons.person_outline, TextConstants.name, profileDetails['name']),
+          _buildDetailRow(Icons.person_outline, TextConstants.name, profileDetails['name']?? ''),
           _divider(),
-          _buildDetailRow(Icons.location_on_outlined,TextConstants.location, profileDetails['location']),
+          _buildDetailRow(Icons.location_on_outlined,TextConstants.location, profileDetails['location']?? ''),
           _divider(),
-          _buildDetailRow(Icons.phone_outlined, TextConstants.phoneNumber, profileDetails['PhoneNumber']),
+          _buildDetailRow(Icons.phone_outlined, TextConstants.phoneNumber, profileDetails['phoneNumber']?? ''),
         ],
       ),
     );

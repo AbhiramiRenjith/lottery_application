@@ -9,6 +9,7 @@ import 'package:lottery_project/constants/text_constants.dart';
 
 class VerifyAccountScreen extends StatelessWidget {
   VerifyAccountScreen({super.key});
+
   final List<TextEditingController> otpControllers = List.generate(
     4,
     (_) => TextEditingController(),
@@ -20,7 +21,7 @@ class VerifyAccountScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(height: 20.h),
+          SizedBox(height: 35.h),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -97,7 +98,7 @@ class VerifyAccountScreen extends StatelessWidget {
   void validate(BuildContext context) {
     String otp = otpControllers.map((e) => e.text).join();
     if (otp.length == 4) {
-      Navigator.pushNamed(context, '/create_new_pass');
+      Navigator.pushNamed(context, '/verify_success');
     } else {
       showDialog(
         context: context,
@@ -106,12 +107,12 @@ class VerifyAccountScreen extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12.r),
             ),
-            title:  Text(TextConstants.alert),
-            content:  Text(TextConstants.pleaseEnterOtp),
+            title: Text(TextConstants.alert),
+            content: Text(TextConstants.pleaseEnterOtp),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context),
-                child:  Text(TextConstants.ok),
+                child: Text(TextConstants.ok),
               ),
             ],
           );

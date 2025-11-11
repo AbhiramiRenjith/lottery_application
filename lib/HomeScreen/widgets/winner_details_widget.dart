@@ -2,9 +2,10 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottery_project/HomeScreen/provider/winnerdetails_provider.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
-import 'package:lottery_project/dummyData/dummy_data.dart';
+import 'package:provider/provider.dart';
 
 class WinnerDetailsWidget extends StatefulWidget {
   const WinnerDetailsWidget({super.key});
@@ -14,16 +15,16 @@ class WinnerDetailsWidget extends StatefulWidget {
 }
 
 class _WinnerDetailsWidgetState extends State<WinnerDetailsWidget> {
-  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+      final winnerController = Provider.of<WinnerDetailsController>(context);
     return Column(
       children: [
         CarouselSlider.builder(
-          itemCount: winnerList.length,
+          itemCount: winnerController.winnerList.length,
           itemBuilder: (context, index, realIndex) {
-            final winner = winnerList[index];
+             final winner = winnerController.winnerList[index];
             return _buildWinnerCard(winner);
           },
           options: CarouselOptions(
@@ -34,7 +35,7 @@ class _WinnerDetailsWidgetState extends State<WinnerDetailsWidget> {
             autoPlayInterval: const Duration(seconds: 4),
             onPageChanged: (index, reason) {
               setState(() {
-                currentIndex = index;
+                 winnerController.setCurrentIndex(index);
               });
             },
           ),
@@ -111,9 +112,10 @@ class _WinnerDetailsWidgetState extends State<WinnerDetailsWidget> {
                   ],
                 ),
               ),
+              
 
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+                padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
                 child: Container(
                   width: double.infinity,
                   padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),

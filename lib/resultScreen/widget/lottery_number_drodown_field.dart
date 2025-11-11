@@ -2,14 +2,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottery_project/ResultScreen/provider/lottery_result_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:lottery_project/constants/color_constants.dart';
 import 'package:lottery_project/constants/text_constants.dart';
-import 'package:lottery_project/dummyData/dummy_data.dart';
+
 
 class LotteryNumberDropdownField extends StatefulWidget {
-  final TextEditingController controller;
-
-  const LotteryNumberDropdownField({super.key, required this.controller});
+  const LotteryNumberDropdownField({super.key});
 
   @override
   State<LotteryNumberDropdownField> createState() =>
@@ -19,12 +19,14 @@ class LotteryNumberDropdownField extends StatefulWidget {
 class _LotteryNumberDropdownFieldState
     extends State<LotteryNumberDropdownField> {
   bool showDropdown = false;
-  String selectedLottery = '';
 
   @override
   Widget build(BuildContext context) {
+    final controller = Provider.of<LotteryResultController>(context);
+
     return Column(
       children: [
+      
         Container(
           decoration: BoxDecoration(
             boxShadow: [
@@ -38,70 +40,59 @@ class _LotteryNumberDropdownFieldState
             borderRadius: BorderRadius.circular(15.r),
           ),
           child: TextFormField(
-           
-           controller: widget.controller, 
-           style: GoogleFonts.poppins(
-            fontWeight: FontWeight.w500,
-            fontSize: 18.sp
-           ),
+            controller: controller.numberController,
+            style: GoogleFonts.poppins(
+              fontWeight: FontWeight.w500,
+              fontSize: 18.sp,
+            ),
+            readOnly: true, 
+            onTap: () {
+              setState(() {
+                showDropdown = !showDropdown;
+              });
+            },
             decoration: InputDecoration(
-              hint: Center(
-                child: Text(
-                  selectedLottery.isEmpty
-                      ? TextConstants.enterNumber
-                      : selectedLottery,
-                  style: GoogleFonts.poppins(
+              hint: Center(child: Text(TextConstants.enterNumber, style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w500,
-                    color: selectedLottery.isEmpty
+                    color: controller.numberController.text.isEmpty
                         ? ColorConstants.labelTextGreyColor
                         : ColorConstants.blackColor,
-                    fontSize: 15.sp,
-                  ),
-                ),
-              ),
+                    fontSize: 15.sp))),
               filled: true,
               fillColor: ColorConstants.whiteColor,
-              contentPadding: EdgeInsets.symmetric(vertical: 0,),
+              contentPadding: const EdgeInsets.symmetric(vertical: 0),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(15),
                 borderSide: BorderSide.none,
               ),
-                   prefixIcon: Container(
-              width: 38.sp,
-              height: 55.sp,
-            decoration: const BoxDecoration(
-              color: ColorConstants.blueColor,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(15),
-                bottomLeft: Radius.circular(15),
-              ),
-            ),
-            child:  Icon(
-              Icons.search,
-              color: ColorConstants.whiteColor,
-              size: 30.sp,
-            ),
-          ),
-      
-              suffixIcon: IconButton(
-                icon: Icon(
-                  showDropdown
-                      ? Icons.keyboard_arrow_up
-                      : Icons.keyboard_arrow_down,
-                  color: ColorConstants.greyColor,
-                  size: 28.sp,
+              prefixIcon: Container(
+                width: 38.sp,
+                height: 55.sp,
+                decoration: const BoxDecoration(
+                  color: ColorConstants.blueColor,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(15),
+                    bottomLeft: Radius.circular(15),
+                  ),
                 ),
-                onPressed: () {
-                  setState(() {
-                    showDropdown = !showDropdown;
-                  });
-                },
+                child: Icon(
+                  Icons.confirmation_num_outlined,
+                  color: ColorConstants.whiteColor,
+                  size: 30.sp,
+                ),
+              ),
+              suffixIcon: Icon(
+                showDropdown
+                    ? Icons.keyboard_arrow_up
+                    : Icons.keyboard_arrow_down,
+                color: ColorConstants.greyColor,
+                size: 28.sp,
               ),
             ),
           ),
         ),
 
-       
+        // Dropdown List
         if (showDropdown)
           Container(
             margin: EdgeInsets.only(top: 8),
@@ -117,7 +108,7 @@ class _LotteryNumberDropdownFieldState
               ],
             ),
             child: Column(
-              children: lotteries
+              children: controller.lotteries
                   .map(
                     (lottery) => ListTile(
                       leading: Icon(
@@ -132,10 +123,8 @@ class _LotteryNumberDropdownFieldState
                         ),
                       ),
                       onTap: () {
+                        controller.selectLottery(lottery);
                         setState(() {
-                          selectedLottery = lottery;
-                          widget.controller.text =
-                              lottery; 
                           showDropdown = false;
                         });
                       },

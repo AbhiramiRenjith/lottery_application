@@ -41,7 +41,7 @@ class WelcomeScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     fontWeight: FontWeight.w600,
-                    fontSize: 35.sp,
+                    fontSize: 40.sp,
                     color: ColorConstants.whiteColor,
                   ),
                 ),
@@ -66,7 +66,7 @@ class WelcomeScreen extends StatelessWidget {
                     TextConstants.signIn,
                     style: GoogleFonts.poppins(
                       color: ColorConstants.whiteColor,
-                      fontSize: 22.sp,
+                      fontSize: 25.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -92,7 +92,7 @@ class WelcomeScreen extends StatelessWidget {
                     TextConstants.signUp,
                     style: GoogleFonts.poppins(
                       color: ColorConstants.blackColor,
-                      fontSize: 22.sp,
+                      fontSize: 25.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -103,7 +103,7 @@ class WelcomeScreen extends StatelessWidget {
                   child: Text(
                     TextConstants.loginWithSocialMedia,
                     style: GoogleFonts.poppins(
-                      fontSize: 15.sp,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
                       color: ColorConstants.whiteColor,
                     ),

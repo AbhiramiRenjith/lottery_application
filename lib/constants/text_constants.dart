@@ -1,7 +1,10 @@
 class TextConstants {
+  
   static const welcome = 'WelCome Back';
   static const signIn = 'SIGN IN';
+  static const signUp = 'SIGN UP';
   static const loginWithSocialMedia = 'Login With Social Media';
+
   static const createAccountTitle = 'Create\nAccount';
   static const fullName = 'Full Name';
   static const location = 'Location';
@@ -9,7 +12,6 @@ class TextConstants {
   static const password = 'Password';
   static const confirmPass = 'Confirm password';
   static const donthaveAccount = "Don't have an account?";
-  static const signUp = 'SIGN UP';
   static const or = ' Or  ';
   static const haveAccount = "Have an account?";
   static const login = 'Login ';
@@ -96,6 +98,16 @@ class TextConstants {
   static const whyUpgrade = 'Why Upgrade';
   static const selectaPrize = 'Select a prize to get predicitions';
   static const availableCategory = 'AVAILABLE PRIZES CATEGORIES';
+  static const readyToPredict = 'Ready to Predict';
+  static const generateAI = 'Generate AI-powered predictions for Bhagyathara';
+  static const tapGeneratepredictions  = "Tap 'Generate predictions to start";
+  static const generateAi = 'Generating AI-powered Predictions...';
+  static const generatePredictions = 'Generate Predictions';
+  static const predictionGenerated = 'Prediction Generated';
+  static const hereareyourAI= "Here are your  AI-powered predictions for Bhagyathara";
+  static const aIanalyzedrecentdraw = "AI analyzed recent draw patterns and generated these predictions.";
+  static const predict = "Predict";
+  static const aIpoweredPredictions = 'AI-powered Predictions';
 
 
 }
